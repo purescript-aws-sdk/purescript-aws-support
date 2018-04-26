@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -20,7 +19,7 @@ options = defaultOptions { unwrapSingleConstructors = true }
 
 -- | <p/>
 newtype AddAttachmentsToSetRequest = AddAttachmentsToSetRequest 
-  { "attachmentSetId" :: NullOrUndefined (AttachmentSetId)
+  { "attachmentSetId" :: Maybe (AttachmentSetId)
   , "attachments" :: (Attachments)
   }
 derive instance newtypeAddAttachmentsToSetRequest :: Newtype AddAttachmentsToSetRequest _
@@ -31,19 +30,19 @@ instance encodeAddAttachmentsToSetRequest :: Encode AddAttachmentsToSetRequest w
 
 -- | Constructs AddAttachmentsToSetRequest from required parameters
 newAddAttachmentsToSetRequest :: Attachments -> AddAttachmentsToSetRequest
-newAddAttachmentsToSetRequest _attachments = AddAttachmentsToSetRequest { "attachments": _attachments, "attachmentSetId": (NullOrUndefined Nothing) }
+newAddAttachmentsToSetRequest _attachments = AddAttachmentsToSetRequest { "attachments": _attachments, "attachmentSetId": Nothing }
 
 -- | Constructs AddAttachmentsToSetRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAddAttachmentsToSetRequest' :: Attachments -> ( { "attachmentSetId" :: NullOrUndefined (AttachmentSetId) , "attachments" :: (Attachments) } -> {"attachmentSetId" :: NullOrUndefined (AttachmentSetId) , "attachments" :: (Attachments) } ) -> AddAttachmentsToSetRequest
-newAddAttachmentsToSetRequest' _attachments customize = (AddAttachmentsToSetRequest <<< customize) { "attachments": _attachments, "attachmentSetId": (NullOrUndefined Nothing) }
+newAddAttachmentsToSetRequest' :: Attachments -> ( { "attachmentSetId" :: Maybe (AttachmentSetId) , "attachments" :: (Attachments) } -> {"attachmentSetId" :: Maybe (AttachmentSetId) , "attachments" :: (Attachments) } ) -> AddAttachmentsToSetRequest
+newAddAttachmentsToSetRequest' _attachments customize = (AddAttachmentsToSetRequest <<< customize) { "attachments": _attachments, "attachmentSetId": Nothing }
 
 
 
 -- | <p>The ID and expiry time of the attachment set returned by the <a>AddAttachmentsToSet</a> operation.</p>
 newtype AddAttachmentsToSetResponse = AddAttachmentsToSetResponse 
-  { "attachmentSetId" :: NullOrUndefined (AttachmentSetId)
-  , "expiryTime" :: NullOrUndefined (ExpiryTime)
+  { "attachmentSetId" :: Maybe (AttachmentSetId)
+  , "expiryTime" :: Maybe (ExpiryTime)
   }
 derive instance newtypeAddAttachmentsToSetResponse :: Newtype AddAttachmentsToSetResponse _
 derive instance repGenericAddAttachmentsToSetResponse :: Generic AddAttachmentsToSetResponse _
@@ -53,21 +52,21 @@ instance encodeAddAttachmentsToSetResponse :: Encode AddAttachmentsToSetResponse
 
 -- | Constructs AddAttachmentsToSetResponse from required parameters
 newAddAttachmentsToSetResponse :: AddAttachmentsToSetResponse
-newAddAttachmentsToSetResponse  = AddAttachmentsToSetResponse { "attachmentSetId": (NullOrUndefined Nothing), "expiryTime": (NullOrUndefined Nothing) }
+newAddAttachmentsToSetResponse  = AddAttachmentsToSetResponse { "attachmentSetId": Nothing, "expiryTime": Nothing }
 
 -- | Constructs AddAttachmentsToSetResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAddAttachmentsToSetResponse' :: ( { "attachmentSetId" :: NullOrUndefined (AttachmentSetId) , "expiryTime" :: NullOrUndefined (ExpiryTime) } -> {"attachmentSetId" :: NullOrUndefined (AttachmentSetId) , "expiryTime" :: NullOrUndefined (ExpiryTime) } ) -> AddAttachmentsToSetResponse
-newAddAttachmentsToSetResponse'  customize = (AddAttachmentsToSetResponse <<< customize) { "attachmentSetId": (NullOrUndefined Nothing), "expiryTime": (NullOrUndefined Nothing) }
+newAddAttachmentsToSetResponse' :: ( { "attachmentSetId" :: Maybe (AttachmentSetId) , "expiryTime" :: Maybe (ExpiryTime) } -> {"attachmentSetId" :: Maybe (AttachmentSetId) , "expiryTime" :: Maybe (ExpiryTime) } ) -> AddAttachmentsToSetResponse
+newAddAttachmentsToSetResponse'  customize = (AddAttachmentsToSetResponse <<< customize) { "attachmentSetId": Nothing, "expiryTime": Nothing }
 
 
 
 -- | <p>To be written.</p>
 newtype AddCommunicationToCaseRequest = AddCommunicationToCaseRequest 
-  { "caseId" :: NullOrUndefined (CaseId)
+  { "caseId" :: Maybe (CaseId)
   , "communicationBody" :: (CommunicationBody)
-  , "ccEmailAddresses" :: NullOrUndefined (CcEmailAddressList)
-  , "attachmentSetId" :: NullOrUndefined (AttachmentSetId)
+  , "ccEmailAddresses" :: Maybe (CcEmailAddressList)
+  , "attachmentSetId" :: Maybe (AttachmentSetId)
   }
 derive instance newtypeAddCommunicationToCaseRequest :: Newtype AddCommunicationToCaseRequest _
 derive instance repGenericAddCommunicationToCaseRequest :: Generic AddCommunicationToCaseRequest _
@@ -77,18 +76,18 @@ instance encodeAddCommunicationToCaseRequest :: Encode AddCommunicationToCaseReq
 
 -- | Constructs AddCommunicationToCaseRequest from required parameters
 newAddCommunicationToCaseRequest :: CommunicationBody -> AddCommunicationToCaseRequest
-newAddCommunicationToCaseRequest _communicationBody = AddCommunicationToCaseRequest { "communicationBody": _communicationBody, "attachmentSetId": (NullOrUndefined Nothing), "caseId": (NullOrUndefined Nothing), "ccEmailAddresses": (NullOrUndefined Nothing) }
+newAddCommunicationToCaseRequest _communicationBody = AddCommunicationToCaseRequest { "communicationBody": _communicationBody, "attachmentSetId": Nothing, "caseId": Nothing, "ccEmailAddresses": Nothing }
 
 -- | Constructs AddCommunicationToCaseRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAddCommunicationToCaseRequest' :: CommunicationBody -> ( { "caseId" :: NullOrUndefined (CaseId) , "communicationBody" :: (CommunicationBody) , "ccEmailAddresses" :: NullOrUndefined (CcEmailAddressList) , "attachmentSetId" :: NullOrUndefined (AttachmentSetId) } -> {"caseId" :: NullOrUndefined (CaseId) , "communicationBody" :: (CommunicationBody) , "ccEmailAddresses" :: NullOrUndefined (CcEmailAddressList) , "attachmentSetId" :: NullOrUndefined (AttachmentSetId) } ) -> AddCommunicationToCaseRequest
-newAddCommunicationToCaseRequest' _communicationBody customize = (AddCommunicationToCaseRequest <<< customize) { "communicationBody": _communicationBody, "attachmentSetId": (NullOrUndefined Nothing), "caseId": (NullOrUndefined Nothing), "ccEmailAddresses": (NullOrUndefined Nothing) }
+newAddCommunicationToCaseRequest' :: CommunicationBody -> ( { "caseId" :: Maybe (CaseId) , "communicationBody" :: (CommunicationBody) , "ccEmailAddresses" :: Maybe (CcEmailAddressList) , "attachmentSetId" :: Maybe (AttachmentSetId) } -> {"caseId" :: Maybe (CaseId) , "communicationBody" :: (CommunicationBody) , "ccEmailAddresses" :: Maybe (CcEmailAddressList) , "attachmentSetId" :: Maybe (AttachmentSetId) } ) -> AddCommunicationToCaseRequest
+newAddCommunicationToCaseRequest' _communicationBody customize = (AddCommunicationToCaseRequest <<< customize) { "communicationBody": _communicationBody, "attachmentSetId": Nothing, "caseId": Nothing, "ccEmailAddresses": Nothing }
 
 
 
 -- | <p>The result of the <a>AddCommunicationToCase</a> operation.</p>
 newtype AddCommunicationToCaseResponse = AddCommunicationToCaseResponse 
-  { "result" :: NullOrUndefined (Result)
+  { "result" :: Maybe (Result)
   }
 derive instance newtypeAddCommunicationToCaseResponse :: Newtype AddCommunicationToCaseResponse _
 derive instance repGenericAddCommunicationToCaseResponse :: Generic AddCommunicationToCaseResponse _
@@ -98,12 +97,12 @@ instance encodeAddCommunicationToCaseResponse :: Encode AddCommunicationToCaseRe
 
 -- | Constructs AddCommunicationToCaseResponse from required parameters
 newAddCommunicationToCaseResponse :: AddCommunicationToCaseResponse
-newAddCommunicationToCaseResponse  = AddCommunicationToCaseResponse { "result": (NullOrUndefined Nothing) }
+newAddCommunicationToCaseResponse  = AddCommunicationToCaseResponse { "result": Nothing }
 
 -- | Constructs AddCommunicationToCaseResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAddCommunicationToCaseResponse' :: ( { "result" :: NullOrUndefined (Result) } -> {"result" :: NullOrUndefined (Result) } ) -> AddCommunicationToCaseResponse
-newAddCommunicationToCaseResponse'  customize = (AddCommunicationToCaseResponse <<< customize) { "result": (NullOrUndefined Nothing) }
+newAddCommunicationToCaseResponse' :: ( { "result" :: Maybe (Result) } -> {"result" :: Maybe (Result) } ) -> AddCommunicationToCaseResponse
+newAddCommunicationToCaseResponse'  customize = (AddCommunicationToCaseResponse <<< customize) { "result": Nothing }
 
 
 
@@ -118,8 +117,8 @@ instance encodeAfterTime :: Encode AfterTime where encode = genericEncode option
 
 -- | <p>An attachment to a case communication. The attachment consists of the file name and the content of the file.</p>
 newtype Attachment = Attachment 
-  { "fileName" :: NullOrUndefined (FileName)
-  , "data" :: NullOrUndefined (Data)
+  { "fileName" :: Maybe (FileName)
+  , "data" :: Maybe (Data)
   }
 derive instance newtypeAttachment :: Newtype Attachment _
 derive instance repGenericAttachment :: Generic Attachment _
@@ -129,19 +128,19 @@ instance encodeAttachment :: Encode Attachment where encode = genericEncode opti
 
 -- | Constructs Attachment from required parameters
 newAttachment :: Attachment
-newAttachment  = Attachment { "data": (NullOrUndefined Nothing), "fileName": (NullOrUndefined Nothing) }
+newAttachment  = Attachment { "data": Nothing, "fileName": Nothing }
 
 -- | Constructs Attachment's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAttachment' :: ( { "fileName" :: NullOrUndefined (FileName) , "data" :: NullOrUndefined (Data) } -> {"fileName" :: NullOrUndefined (FileName) , "data" :: NullOrUndefined (Data) } ) -> Attachment
-newAttachment'  customize = (Attachment <<< customize) { "data": (NullOrUndefined Nothing), "fileName": (NullOrUndefined Nothing) }
+newAttachment' :: ( { "fileName" :: Maybe (FileName) , "data" :: Maybe (Data) } -> {"fileName" :: Maybe (FileName) , "data" :: Maybe (Data) } ) -> Attachment
+newAttachment'  customize = (Attachment <<< customize) { "data": Nothing, "fileName": Nothing }
 
 
 
 -- | <p>The file name and ID of an attachment to a case communication. You can use the ID to retrieve the attachment with the <a>DescribeAttachment</a> operation.</p>
 newtype AttachmentDetails = AttachmentDetails 
-  { "attachmentId" :: NullOrUndefined (AttachmentId)
-  , "fileName" :: NullOrUndefined (FileName)
+  { "attachmentId" :: Maybe (AttachmentId)
+  , "fileName" :: Maybe (FileName)
   }
 derive instance newtypeAttachmentDetails :: Newtype AttachmentDetails _
 derive instance repGenericAttachmentDetails :: Generic AttachmentDetails _
@@ -151,12 +150,12 @@ instance encodeAttachmentDetails :: Encode AttachmentDetails where encode = gene
 
 -- | Constructs AttachmentDetails from required parameters
 newAttachmentDetails :: AttachmentDetails
-newAttachmentDetails  = AttachmentDetails { "attachmentId": (NullOrUndefined Nothing), "fileName": (NullOrUndefined Nothing) }
+newAttachmentDetails  = AttachmentDetails { "attachmentId": Nothing, "fileName": Nothing }
 
 -- | Constructs AttachmentDetails's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAttachmentDetails' :: ( { "attachmentId" :: NullOrUndefined (AttachmentId) , "fileName" :: NullOrUndefined (FileName) } -> {"attachmentId" :: NullOrUndefined (AttachmentId) , "fileName" :: NullOrUndefined (FileName) } ) -> AttachmentDetails
-newAttachmentDetails'  customize = (AttachmentDetails <<< customize) { "attachmentId": (NullOrUndefined Nothing), "fileName": (NullOrUndefined Nothing) }
+newAttachmentDetails' :: ( { "attachmentId" :: Maybe (AttachmentId) , "fileName" :: Maybe (FileName) } -> {"attachmentId" :: Maybe (AttachmentId) , "fileName" :: Maybe (FileName) } ) -> AttachmentDetails
+newAttachmentDetails'  customize = (AttachmentDetails <<< customize) { "attachmentId": Nothing, "fileName": Nothing }
 
 
 
@@ -171,7 +170,7 @@ instance encodeAttachmentId :: Encode AttachmentId where encode = genericEncode 
 
 -- | <p>An attachment with the specified ID could not be found.</p>
 newtype AttachmentIdNotFound = AttachmentIdNotFound 
-  { "message" :: NullOrUndefined (ErrorMessage)
+  { "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeAttachmentIdNotFound :: Newtype AttachmentIdNotFound _
 derive instance repGenericAttachmentIdNotFound :: Generic AttachmentIdNotFound _
@@ -181,18 +180,18 @@ instance encodeAttachmentIdNotFound :: Encode AttachmentIdNotFound where encode 
 
 -- | Constructs AttachmentIdNotFound from required parameters
 newAttachmentIdNotFound :: AttachmentIdNotFound
-newAttachmentIdNotFound  = AttachmentIdNotFound { "message": (NullOrUndefined Nothing) }
+newAttachmentIdNotFound  = AttachmentIdNotFound { "message": Nothing }
 
 -- | Constructs AttachmentIdNotFound's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAttachmentIdNotFound' :: ( { "message" :: NullOrUndefined (ErrorMessage) } -> {"message" :: NullOrUndefined (ErrorMessage) } ) -> AttachmentIdNotFound
-newAttachmentIdNotFound'  customize = (AttachmentIdNotFound <<< customize) { "message": (NullOrUndefined Nothing) }
+newAttachmentIdNotFound' :: ( { "message" :: Maybe (ErrorMessage) } -> {"message" :: Maybe (ErrorMessage) } ) -> AttachmentIdNotFound
+newAttachmentIdNotFound'  customize = (AttachmentIdNotFound <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The limit for the number of attachment sets created in a short period of time has been exceeded.</p>
 newtype AttachmentLimitExceeded = AttachmentLimitExceeded 
-  { "message" :: NullOrUndefined (ErrorMessage)
+  { "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeAttachmentLimitExceeded :: Newtype AttachmentLimitExceeded _
 derive instance repGenericAttachmentLimitExceeded :: Generic AttachmentLimitExceeded _
@@ -202,12 +201,12 @@ instance encodeAttachmentLimitExceeded :: Encode AttachmentLimitExceeded where e
 
 -- | Constructs AttachmentLimitExceeded from required parameters
 newAttachmentLimitExceeded :: AttachmentLimitExceeded
-newAttachmentLimitExceeded  = AttachmentLimitExceeded { "message": (NullOrUndefined Nothing) }
+newAttachmentLimitExceeded  = AttachmentLimitExceeded { "message": Nothing }
 
 -- | Constructs AttachmentLimitExceeded's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAttachmentLimitExceeded' :: ( { "message" :: NullOrUndefined (ErrorMessage) } -> {"message" :: NullOrUndefined (ErrorMessage) } ) -> AttachmentLimitExceeded
-newAttachmentLimitExceeded'  customize = (AttachmentLimitExceeded <<< customize) { "message": (NullOrUndefined Nothing) }
+newAttachmentLimitExceeded' :: ( { "message" :: Maybe (ErrorMessage) } -> {"message" :: Maybe (ErrorMessage) } ) -> AttachmentLimitExceeded
+newAttachmentLimitExceeded'  customize = (AttachmentLimitExceeded <<< customize) { "message": Nothing }
 
 
 
@@ -222,7 +221,7 @@ instance encodeAttachmentSet :: Encode AttachmentSet where encode = genericEncod
 
 -- | <p>The expiration time of the attachment set has passed. The set expires 1 hour after it is created.</p>
 newtype AttachmentSetExpired = AttachmentSetExpired 
-  { "message" :: NullOrUndefined (ErrorMessage)
+  { "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeAttachmentSetExpired :: Newtype AttachmentSetExpired _
 derive instance repGenericAttachmentSetExpired :: Generic AttachmentSetExpired _
@@ -232,12 +231,12 @@ instance encodeAttachmentSetExpired :: Encode AttachmentSetExpired where encode 
 
 -- | Constructs AttachmentSetExpired from required parameters
 newAttachmentSetExpired :: AttachmentSetExpired
-newAttachmentSetExpired  = AttachmentSetExpired { "message": (NullOrUndefined Nothing) }
+newAttachmentSetExpired  = AttachmentSetExpired { "message": Nothing }
 
 -- | Constructs AttachmentSetExpired's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAttachmentSetExpired' :: ( { "message" :: NullOrUndefined (ErrorMessage) } -> {"message" :: NullOrUndefined (ErrorMessage) } ) -> AttachmentSetExpired
-newAttachmentSetExpired'  customize = (AttachmentSetExpired <<< customize) { "message": (NullOrUndefined Nothing) }
+newAttachmentSetExpired' :: ( { "message" :: Maybe (ErrorMessage) } -> {"message" :: Maybe (ErrorMessage) } ) -> AttachmentSetExpired
+newAttachmentSetExpired'  customize = (AttachmentSetExpired <<< customize) { "message": Nothing }
 
 
 
@@ -252,7 +251,7 @@ instance encodeAttachmentSetId :: Encode AttachmentSetId where encode = genericE
 
 -- | <p>An attachment set with the specified ID could not be found.</p>
 newtype AttachmentSetIdNotFound = AttachmentSetIdNotFound 
-  { "message" :: NullOrUndefined (ErrorMessage)
+  { "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeAttachmentSetIdNotFound :: Newtype AttachmentSetIdNotFound _
 derive instance repGenericAttachmentSetIdNotFound :: Generic AttachmentSetIdNotFound _
@@ -262,18 +261,18 @@ instance encodeAttachmentSetIdNotFound :: Encode AttachmentSetIdNotFound where e
 
 -- | Constructs AttachmentSetIdNotFound from required parameters
 newAttachmentSetIdNotFound :: AttachmentSetIdNotFound
-newAttachmentSetIdNotFound  = AttachmentSetIdNotFound { "message": (NullOrUndefined Nothing) }
+newAttachmentSetIdNotFound  = AttachmentSetIdNotFound { "message": Nothing }
 
 -- | Constructs AttachmentSetIdNotFound's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAttachmentSetIdNotFound' :: ( { "message" :: NullOrUndefined (ErrorMessage) } -> {"message" :: NullOrUndefined (ErrorMessage) } ) -> AttachmentSetIdNotFound
-newAttachmentSetIdNotFound'  customize = (AttachmentSetIdNotFound <<< customize) { "message": (NullOrUndefined Nothing) }
+newAttachmentSetIdNotFound' :: ( { "message" :: Maybe (ErrorMessage) } -> {"message" :: Maybe (ErrorMessage) } ) -> AttachmentSetIdNotFound
+newAttachmentSetIdNotFound'  customize = (AttachmentSetIdNotFound <<< customize) { "message": Nothing }
 
 
 
 -- | <p>A limit for the size of an attachment set has been exceeded. The limits are 3 attachments and 5 MB per attachment.</p>
 newtype AttachmentSetSizeLimitExceeded = AttachmentSetSizeLimitExceeded 
-  { "message" :: NullOrUndefined (ErrorMessage)
+  { "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeAttachmentSetSizeLimitExceeded :: Newtype AttachmentSetSizeLimitExceeded _
 derive instance repGenericAttachmentSetSizeLimitExceeded :: Generic AttachmentSetSizeLimitExceeded _
@@ -283,12 +282,12 @@ instance encodeAttachmentSetSizeLimitExceeded :: Encode AttachmentSetSizeLimitEx
 
 -- | Constructs AttachmentSetSizeLimitExceeded from required parameters
 newAttachmentSetSizeLimitExceeded :: AttachmentSetSizeLimitExceeded
-newAttachmentSetSizeLimitExceeded  = AttachmentSetSizeLimitExceeded { "message": (NullOrUndefined Nothing) }
+newAttachmentSetSizeLimitExceeded  = AttachmentSetSizeLimitExceeded { "message": Nothing }
 
 -- | Constructs AttachmentSetSizeLimitExceeded's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAttachmentSetSizeLimitExceeded' :: ( { "message" :: NullOrUndefined (ErrorMessage) } -> {"message" :: NullOrUndefined (ErrorMessage) } ) -> AttachmentSetSizeLimitExceeded
-newAttachmentSetSizeLimitExceeded'  customize = (AttachmentSetSizeLimitExceeded <<< customize) { "message": (NullOrUndefined Nothing) }
+newAttachmentSetSizeLimitExceeded' :: ( { "message" :: Maybe (ErrorMessage) } -> {"message" :: Maybe (ErrorMessage) } ) -> AttachmentSetSizeLimitExceeded
+newAttachmentSetSizeLimitExceeded'  customize = (AttachmentSetSizeLimitExceeded <<< customize) { "message": Nothing }
 
 
 
@@ -312,7 +311,7 @@ instance encodeBeforeTime :: Encode BeforeTime where encode = genericEncode opti
 
 -- | <p>The case creation limit for the account has been exceeded.</p>
 newtype CaseCreationLimitExceeded = CaseCreationLimitExceeded 
-  { "message" :: NullOrUndefined (ErrorMessage)
+  { "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeCaseCreationLimitExceeded :: Newtype CaseCreationLimitExceeded _
 derive instance repGenericCaseCreationLimitExceeded :: Generic CaseCreationLimitExceeded _
@@ -322,29 +321,29 @@ instance encodeCaseCreationLimitExceeded :: Encode CaseCreationLimitExceeded whe
 
 -- | Constructs CaseCreationLimitExceeded from required parameters
 newCaseCreationLimitExceeded :: CaseCreationLimitExceeded
-newCaseCreationLimitExceeded  = CaseCreationLimitExceeded { "message": (NullOrUndefined Nothing) }
+newCaseCreationLimitExceeded  = CaseCreationLimitExceeded { "message": Nothing }
 
 -- | Constructs CaseCreationLimitExceeded's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCaseCreationLimitExceeded' :: ( { "message" :: NullOrUndefined (ErrorMessage) } -> {"message" :: NullOrUndefined (ErrorMessage) } ) -> CaseCreationLimitExceeded
-newCaseCreationLimitExceeded'  customize = (CaseCreationLimitExceeded <<< customize) { "message": (NullOrUndefined Nothing) }
+newCaseCreationLimitExceeded' :: ( { "message" :: Maybe (ErrorMessage) } -> {"message" :: Maybe (ErrorMessage) } ) -> CaseCreationLimitExceeded
+newCaseCreationLimitExceeded'  customize = (CaseCreationLimitExceeded <<< customize) { "message": Nothing }
 
 
 
 -- | <p>A JSON-formatted object that contains the metadata for a support case. It is contained the response from a <a>DescribeCases</a> request. <b>CaseDetails</b> contains the following fields:</p> <ul> <li> <p> <b>caseId.</b> The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.</p> </li> <li> <p> <b>categoryCode.</b> The category of problem for the AWS Support case. Corresponds to the CategoryCode values returned by a call to <a>DescribeServices</a>.</p> </li> <li> <p> <b>displayId.</b> The identifier for the case on pages in the AWS Support Center.</p> </li> <li> <p> <b>language.</b> The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p> </li> <li> <p> <b>recentCommunications.</b> One or more <a>Communication</a> objects. Fields of these objects are <code>attachments</code>, <code>body</code>, <code>caseId</code>, <code>submittedBy</code>, and <code>timeCreated</code>.</p> </li> <li> <p> <b>nextToken.</b> A resumption point for pagination.</p> </li> <li> <p> <b>serviceCode.</b> The identifier for the AWS service that corresponds to the service code defined in the call to <a>DescribeServices</a>.</p> </li> <li> <p> <b>severityCode. </b>The severity code assigned to the case. Contains one of the values returned by the call to <a>DescribeSeverityLevels</a>.</p> </li> <li> <p> <b>status.</b> The status of the case in the AWS Support Center.</p> </li> <li> <p> <b>subject.</b> The subject line of the case.</p> </li> <li> <p> <b>submittedBy.</b> The email address of the account that submitted the case.</p> </li> <li> <p> <b>timeCreated.</b> The time the case was created, in ISO-8601 format.</p> </li> </ul>
 newtype CaseDetails = CaseDetails 
-  { "caseId" :: NullOrUndefined (CaseId)
-  , "displayId" :: NullOrUndefined (DisplayId)
-  , "subject" :: NullOrUndefined (Subject)
-  , "status" :: NullOrUndefined (Status)
-  , "serviceCode" :: NullOrUndefined (ServiceCode)
-  , "categoryCode" :: NullOrUndefined (CategoryCode)
-  , "severityCode" :: NullOrUndefined (SeverityCode)
-  , "submittedBy" :: NullOrUndefined (SubmittedBy)
-  , "timeCreated" :: NullOrUndefined (TimeCreated)
-  , "recentCommunications" :: NullOrUndefined (RecentCaseCommunications)
-  , "ccEmailAddresses" :: NullOrUndefined (CcEmailAddressList)
-  , "language" :: NullOrUndefined (Language)
+  { "caseId" :: Maybe (CaseId)
+  , "displayId" :: Maybe (DisplayId)
+  , "subject" :: Maybe (Subject)
+  , "status" :: Maybe (Status)
+  , "serviceCode" :: Maybe (ServiceCode)
+  , "categoryCode" :: Maybe (CategoryCode)
+  , "severityCode" :: Maybe (SeverityCode)
+  , "submittedBy" :: Maybe (SubmittedBy)
+  , "timeCreated" :: Maybe (TimeCreated)
+  , "recentCommunications" :: Maybe (RecentCaseCommunications)
+  , "ccEmailAddresses" :: Maybe (CcEmailAddressList)
+  , "language" :: Maybe (Language)
   }
 derive instance newtypeCaseDetails :: Newtype CaseDetails _
 derive instance repGenericCaseDetails :: Generic CaseDetails _
@@ -354,12 +353,12 @@ instance encodeCaseDetails :: Encode CaseDetails where encode = genericEncode op
 
 -- | Constructs CaseDetails from required parameters
 newCaseDetails :: CaseDetails
-newCaseDetails  = CaseDetails { "caseId": (NullOrUndefined Nothing), "categoryCode": (NullOrUndefined Nothing), "ccEmailAddresses": (NullOrUndefined Nothing), "displayId": (NullOrUndefined Nothing), "language": (NullOrUndefined Nothing), "recentCommunications": (NullOrUndefined Nothing), "serviceCode": (NullOrUndefined Nothing), "severityCode": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing), "subject": (NullOrUndefined Nothing), "submittedBy": (NullOrUndefined Nothing), "timeCreated": (NullOrUndefined Nothing) }
+newCaseDetails  = CaseDetails { "caseId": Nothing, "categoryCode": Nothing, "ccEmailAddresses": Nothing, "displayId": Nothing, "language": Nothing, "recentCommunications": Nothing, "serviceCode": Nothing, "severityCode": Nothing, "status": Nothing, "subject": Nothing, "submittedBy": Nothing, "timeCreated": Nothing }
 
 -- | Constructs CaseDetails's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCaseDetails' :: ( { "caseId" :: NullOrUndefined (CaseId) , "displayId" :: NullOrUndefined (DisplayId) , "subject" :: NullOrUndefined (Subject) , "status" :: NullOrUndefined (Status) , "serviceCode" :: NullOrUndefined (ServiceCode) , "categoryCode" :: NullOrUndefined (CategoryCode) , "severityCode" :: NullOrUndefined (SeverityCode) , "submittedBy" :: NullOrUndefined (SubmittedBy) , "timeCreated" :: NullOrUndefined (TimeCreated) , "recentCommunications" :: NullOrUndefined (RecentCaseCommunications) , "ccEmailAddresses" :: NullOrUndefined (CcEmailAddressList) , "language" :: NullOrUndefined (Language) } -> {"caseId" :: NullOrUndefined (CaseId) , "displayId" :: NullOrUndefined (DisplayId) , "subject" :: NullOrUndefined (Subject) , "status" :: NullOrUndefined (Status) , "serviceCode" :: NullOrUndefined (ServiceCode) , "categoryCode" :: NullOrUndefined (CategoryCode) , "severityCode" :: NullOrUndefined (SeverityCode) , "submittedBy" :: NullOrUndefined (SubmittedBy) , "timeCreated" :: NullOrUndefined (TimeCreated) , "recentCommunications" :: NullOrUndefined (RecentCaseCommunications) , "ccEmailAddresses" :: NullOrUndefined (CcEmailAddressList) , "language" :: NullOrUndefined (Language) } ) -> CaseDetails
-newCaseDetails'  customize = (CaseDetails <<< customize) { "caseId": (NullOrUndefined Nothing), "categoryCode": (NullOrUndefined Nothing), "ccEmailAddresses": (NullOrUndefined Nothing), "displayId": (NullOrUndefined Nothing), "language": (NullOrUndefined Nothing), "recentCommunications": (NullOrUndefined Nothing), "serviceCode": (NullOrUndefined Nothing), "severityCode": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing), "subject": (NullOrUndefined Nothing), "submittedBy": (NullOrUndefined Nothing), "timeCreated": (NullOrUndefined Nothing) }
+newCaseDetails' :: ( { "caseId" :: Maybe (CaseId) , "displayId" :: Maybe (DisplayId) , "subject" :: Maybe (Subject) , "status" :: Maybe (Status) , "serviceCode" :: Maybe (ServiceCode) , "categoryCode" :: Maybe (CategoryCode) , "severityCode" :: Maybe (SeverityCode) , "submittedBy" :: Maybe (SubmittedBy) , "timeCreated" :: Maybe (TimeCreated) , "recentCommunications" :: Maybe (RecentCaseCommunications) , "ccEmailAddresses" :: Maybe (CcEmailAddressList) , "language" :: Maybe (Language) } -> {"caseId" :: Maybe (CaseId) , "displayId" :: Maybe (DisplayId) , "subject" :: Maybe (Subject) , "status" :: Maybe (Status) , "serviceCode" :: Maybe (ServiceCode) , "categoryCode" :: Maybe (CategoryCode) , "severityCode" :: Maybe (SeverityCode) , "submittedBy" :: Maybe (SubmittedBy) , "timeCreated" :: Maybe (TimeCreated) , "recentCommunications" :: Maybe (RecentCaseCommunications) , "ccEmailAddresses" :: Maybe (CcEmailAddressList) , "language" :: Maybe (Language) } ) -> CaseDetails
+newCaseDetails'  customize = (CaseDetails <<< customize) { "caseId": Nothing, "categoryCode": Nothing, "ccEmailAddresses": Nothing, "displayId": Nothing, "language": Nothing, "recentCommunications": Nothing, "serviceCode": Nothing, "severityCode": Nothing, "status": Nothing, "subject": Nothing, "submittedBy": Nothing, "timeCreated": Nothing }
 
 
 
@@ -383,7 +382,7 @@ instance encodeCaseIdList :: Encode CaseIdList where encode = genericEncode opti
 
 -- | <p>The requested <code>caseId</code> could not be located.</p>
 newtype CaseIdNotFound = CaseIdNotFound 
-  { "message" :: NullOrUndefined (ErrorMessage)
+  { "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeCaseIdNotFound :: Newtype CaseIdNotFound _
 derive instance repGenericCaseIdNotFound :: Generic CaseIdNotFound _
@@ -393,12 +392,12 @@ instance encodeCaseIdNotFound :: Encode CaseIdNotFound where encode = genericEnc
 
 -- | Constructs CaseIdNotFound from required parameters
 newCaseIdNotFound :: CaseIdNotFound
-newCaseIdNotFound  = CaseIdNotFound { "message": (NullOrUndefined Nothing) }
+newCaseIdNotFound  = CaseIdNotFound { "message": Nothing }
 
 -- | Constructs CaseIdNotFound's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCaseIdNotFound' :: ( { "message" :: NullOrUndefined (ErrorMessage) } -> {"message" :: NullOrUndefined (ErrorMessage) } ) -> CaseIdNotFound
-newCaseIdNotFound'  customize = (CaseIdNotFound <<< customize) { "message": (NullOrUndefined Nothing) }
+newCaseIdNotFound' :: ( { "message" :: Maybe (ErrorMessage) } -> {"message" :: Maybe (ErrorMessage) } ) -> CaseIdNotFound
+newCaseIdNotFound'  customize = (CaseIdNotFound <<< customize) { "message": Nothing }
 
 
 
@@ -422,8 +421,8 @@ instance encodeCaseStatus :: Encode CaseStatus where encode = genericEncode opti
 
 -- | <p>A JSON-formatted name/value pair that represents the category name and category code of the problem, selected from the <a>DescribeServices</a> response for each AWS service.</p>
 newtype Category = Category 
-  { "code" :: NullOrUndefined (CategoryCode)
-  , "name" :: NullOrUndefined (CategoryName)
+  { "code" :: Maybe (CategoryCode)
+  , "name" :: Maybe (CategoryName)
   }
 derive instance newtypeCategory :: Newtype Category _
 derive instance repGenericCategory :: Generic Category _
@@ -433,12 +432,12 @@ instance encodeCategory :: Encode Category where encode = genericEncode options
 
 -- | Constructs Category from required parameters
 newCategory :: Category
-newCategory  = Category { "code": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing) }
+newCategory  = Category { "code": Nothing, "name": Nothing }
 
 -- | Constructs Category's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCategory' :: ( { "code" :: NullOrUndefined (CategoryCode) , "name" :: NullOrUndefined (CategoryName) } -> {"code" :: NullOrUndefined (CategoryCode) , "name" :: NullOrUndefined (CategoryName) } ) -> Category
-newCategory'  customize = (Category <<< customize) { "code": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing) }
+newCategory' :: ( { "code" :: Maybe (CategoryCode) , "name" :: Maybe (CategoryName) } -> {"code" :: Maybe (CategoryCode) , "name" :: Maybe (CategoryName) } ) -> Category
+newCategory'  customize = (Category <<< customize) { "code": Nothing, "name": Nothing }
 
 
 
@@ -489,11 +488,11 @@ instance encodeCcEmailAddressList :: Encode CcEmailAddressList where encode = ge
 
 -- | <p>A communication associated with an AWS Support case. The communication consists of the case ID, the message body, attachment information, the account email address, and the date and time of the communication.</p>
 newtype Communication = Communication 
-  { "caseId" :: NullOrUndefined (CaseId)
-  , "body" :: NullOrUndefined (CommunicationBody)
-  , "submittedBy" :: NullOrUndefined (SubmittedBy)
-  , "timeCreated" :: NullOrUndefined (TimeCreated)
-  , "attachmentSet" :: NullOrUndefined (AttachmentSet)
+  { "caseId" :: Maybe (CaseId)
+  , "body" :: Maybe (CommunicationBody)
+  , "submittedBy" :: Maybe (SubmittedBy)
+  , "timeCreated" :: Maybe (TimeCreated)
+  , "attachmentSet" :: Maybe (AttachmentSet)
   }
 derive instance newtypeCommunication :: Newtype Communication _
 derive instance repGenericCommunication :: Generic Communication _
@@ -503,12 +502,12 @@ instance encodeCommunication :: Encode Communication where encode = genericEncod
 
 -- | Constructs Communication from required parameters
 newCommunication :: Communication
-newCommunication  = Communication { "attachmentSet": (NullOrUndefined Nothing), "body": (NullOrUndefined Nothing), "caseId": (NullOrUndefined Nothing), "submittedBy": (NullOrUndefined Nothing), "timeCreated": (NullOrUndefined Nothing) }
+newCommunication  = Communication { "attachmentSet": Nothing, "body": Nothing, "caseId": Nothing, "submittedBy": Nothing, "timeCreated": Nothing }
 
 -- | Constructs Communication's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCommunication' :: ( { "caseId" :: NullOrUndefined (CaseId) , "body" :: NullOrUndefined (CommunicationBody) , "submittedBy" :: NullOrUndefined (SubmittedBy) , "timeCreated" :: NullOrUndefined (TimeCreated) , "attachmentSet" :: NullOrUndefined (AttachmentSet) } -> {"caseId" :: NullOrUndefined (CaseId) , "body" :: NullOrUndefined (CommunicationBody) , "submittedBy" :: NullOrUndefined (SubmittedBy) , "timeCreated" :: NullOrUndefined (TimeCreated) , "attachmentSet" :: NullOrUndefined (AttachmentSet) } ) -> Communication
-newCommunication'  customize = (Communication <<< customize) { "attachmentSet": (NullOrUndefined Nothing), "body": (NullOrUndefined Nothing), "caseId": (NullOrUndefined Nothing), "submittedBy": (NullOrUndefined Nothing), "timeCreated": (NullOrUndefined Nothing) }
+newCommunication' :: ( { "caseId" :: Maybe (CaseId) , "body" :: Maybe (CommunicationBody) , "submittedBy" :: Maybe (SubmittedBy) , "timeCreated" :: Maybe (TimeCreated) , "attachmentSet" :: Maybe (AttachmentSet) } -> {"caseId" :: Maybe (CaseId) , "body" :: Maybe (CommunicationBody) , "submittedBy" :: Maybe (SubmittedBy) , "timeCreated" :: Maybe (TimeCreated) , "attachmentSet" :: Maybe (AttachmentSet) } ) -> Communication
+newCommunication'  customize = (Communication <<< customize) { "attachmentSet": Nothing, "body": Nothing, "caseId": Nothing, "submittedBy": Nothing, "timeCreated": Nothing }
 
 
 
@@ -533,14 +532,14 @@ instance encodeCommunicationList :: Encode CommunicationList where encode = gene
 -- | <p/>
 newtype CreateCaseRequest = CreateCaseRequest 
   { "subject" :: (Subject)
-  , "serviceCode" :: NullOrUndefined (ServiceCode)
-  , "severityCode" :: NullOrUndefined (SeverityCode)
-  , "categoryCode" :: NullOrUndefined (CategoryCode)
+  , "serviceCode" :: Maybe (ServiceCode)
+  , "severityCode" :: Maybe (SeverityCode)
+  , "categoryCode" :: Maybe (CategoryCode)
   , "communicationBody" :: (CommunicationBody)
-  , "ccEmailAddresses" :: NullOrUndefined (CcEmailAddressList)
-  , "language" :: NullOrUndefined (Language)
-  , "issueType" :: NullOrUndefined (IssueType)
-  , "attachmentSetId" :: NullOrUndefined (AttachmentSetId)
+  , "ccEmailAddresses" :: Maybe (CcEmailAddressList)
+  , "language" :: Maybe (Language)
+  , "issueType" :: Maybe (IssueType)
+  , "attachmentSetId" :: Maybe (AttachmentSetId)
   }
 derive instance newtypeCreateCaseRequest :: Newtype CreateCaseRequest _
 derive instance repGenericCreateCaseRequest :: Generic CreateCaseRequest _
@@ -550,18 +549,18 @@ instance encodeCreateCaseRequest :: Encode CreateCaseRequest where encode = gene
 
 -- | Constructs CreateCaseRequest from required parameters
 newCreateCaseRequest :: CommunicationBody -> Subject -> CreateCaseRequest
-newCreateCaseRequest _communicationBody _subject = CreateCaseRequest { "communicationBody": _communicationBody, "subject": _subject, "attachmentSetId": (NullOrUndefined Nothing), "categoryCode": (NullOrUndefined Nothing), "ccEmailAddresses": (NullOrUndefined Nothing), "issueType": (NullOrUndefined Nothing), "language": (NullOrUndefined Nothing), "serviceCode": (NullOrUndefined Nothing), "severityCode": (NullOrUndefined Nothing) }
+newCreateCaseRequest _communicationBody _subject = CreateCaseRequest { "communicationBody": _communicationBody, "subject": _subject, "attachmentSetId": Nothing, "categoryCode": Nothing, "ccEmailAddresses": Nothing, "issueType": Nothing, "language": Nothing, "serviceCode": Nothing, "severityCode": Nothing }
 
 -- | Constructs CreateCaseRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateCaseRequest' :: CommunicationBody -> Subject -> ( { "subject" :: (Subject) , "serviceCode" :: NullOrUndefined (ServiceCode) , "severityCode" :: NullOrUndefined (SeverityCode) , "categoryCode" :: NullOrUndefined (CategoryCode) , "communicationBody" :: (CommunicationBody) , "ccEmailAddresses" :: NullOrUndefined (CcEmailAddressList) , "language" :: NullOrUndefined (Language) , "issueType" :: NullOrUndefined (IssueType) , "attachmentSetId" :: NullOrUndefined (AttachmentSetId) } -> {"subject" :: (Subject) , "serviceCode" :: NullOrUndefined (ServiceCode) , "severityCode" :: NullOrUndefined (SeverityCode) , "categoryCode" :: NullOrUndefined (CategoryCode) , "communicationBody" :: (CommunicationBody) , "ccEmailAddresses" :: NullOrUndefined (CcEmailAddressList) , "language" :: NullOrUndefined (Language) , "issueType" :: NullOrUndefined (IssueType) , "attachmentSetId" :: NullOrUndefined (AttachmentSetId) } ) -> CreateCaseRequest
-newCreateCaseRequest' _communicationBody _subject customize = (CreateCaseRequest <<< customize) { "communicationBody": _communicationBody, "subject": _subject, "attachmentSetId": (NullOrUndefined Nothing), "categoryCode": (NullOrUndefined Nothing), "ccEmailAddresses": (NullOrUndefined Nothing), "issueType": (NullOrUndefined Nothing), "language": (NullOrUndefined Nothing), "serviceCode": (NullOrUndefined Nothing), "severityCode": (NullOrUndefined Nothing) }
+newCreateCaseRequest' :: CommunicationBody -> Subject -> ( { "subject" :: (Subject) , "serviceCode" :: Maybe (ServiceCode) , "severityCode" :: Maybe (SeverityCode) , "categoryCode" :: Maybe (CategoryCode) , "communicationBody" :: (CommunicationBody) , "ccEmailAddresses" :: Maybe (CcEmailAddressList) , "language" :: Maybe (Language) , "issueType" :: Maybe (IssueType) , "attachmentSetId" :: Maybe (AttachmentSetId) } -> {"subject" :: (Subject) , "serviceCode" :: Maybe (ServiceCode) , "severityCode" :: Maybe (SeverityCode) , "categoryCode" :: Maybe (CategoryCode) , "communicationBody" :: (CommunicationBody) , "ccEmailAddresses" :: Maybe (CcEmailAddressList) , "language" :: Maybe (Language) , "issueType" :: Maybe (IssueType) , "attachmentSetId" :: Maybe (AttachmentSetId) } ) -> CreateCaseRequest
+newCreateCaseRequest' _communicationBody _subject customize = (CreateCaseRequest <<< customize) { "communicationBody": _communicationBody, "subject": _subject, "attachmentSetId": Nothing, "categoryCode": Nothing, "ccEmailAddresses": Nothing, "issueType": Nothing, "language": Nothing, "serviceCode": Nothing, "severityCode": Nothing }
 
 
 
 -- | <p>The AWS Support case ID returned by a successful completion of the <a>CreateCase</a> operation. </p>
 newtype CreateCaseResponse = CreateCaseResponse 
-  { "caseId" :: NullOrUndefined (CaseId)
+  { "caseId" :: Maybe (CaseId)
   }
 derive instance newtypeCreateCaseResponse :: Newtype CreateCaseResponse _
 derive instance repGenericCreateCaseResponse :: Generic CreateCaseResponse _
@@ -571,12 +570,12 @@ instance encodeCreateCaseResponse :: Encode CreateCaseResponse where encode = ge
 
 -- | Constructs CreateCaseResponse from required parameters
 newCreateCaseResponse :: CreateCaseResponse
-newCreateCaseResponse  = CreateCaseResponse { "caseId": (NullOrUndefined Nothing) }
+newCreateCaseResponse  = CreateCaseResponse { "caseId": Nothing }
 
 -- | Constructs CreateCaseResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateCaseResponse' :: ( { "caseId" :: NullOrUndefined (CaseId) } -> {"caseId" :: NullOrUndefined (CaseId) } ) -> CreateCaseResponse
-newCreateCaseResponse'  customize = (CreateCaseResponse <<< customize) { "caseId": (NullOrUndefined Nothing) }
+newCreateCaseResponse' :: ( { "caseId" :: Maybe (CaseId) } -> {"caseId" :: Maybe (CaseId) } ) -> CreateCaseResponse
+newCreateCaseResponse'  customize = (CreateCaseResponse <<< customize) { "caseId": Nothing }
 
 
 
@@ -591,7 +590,7 @@ instance encodeData :: Encode Data where encode = genericEncode options
 
 -- | <p>The limit for the number of <a>DescribeAttachment</a> requests in a short period of time has been exceeded.</p>
 newtype DescribeAttachmentLimitExceeded = DescribeAttachmentLimitExceeded 
-  { "message" :: NullOrUndefined (ErrorMessage)
+  { "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeDescribeAttachmentLimitExceeded :: Newtype DescribeAttachmentLimitExceeded _
 derive instance repGenericDescribeAttachmentLimitExceeded :: Generic DescribeAttachmentLimitExceeded _
@@ -601,12 +600,12 @@ instance encodeDescribeAttachmentLimitExceeded :: Encode DescribeAttachmentLimit
 
 -- | Constructs DescribeAttachmentLimitExceeded from required parameters
 newDescribeAttachmentLimitExceeded :: DescribeAttachmentLimitExceeded
-newDescribeAttachmentLimitExceeded  = DescribeAttachmentLimitExceeded { "message": (NullOrUndefined Nothing) }
+newDescribeAttachmentLimitExceeded  = DescribeAttachmentLimitExceeded { "message": Nothing }
 
 -- | Constructs DescribeAttachmentLimitExceeded's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAttachmentLimitExceeded' :: ( { "message" :: NullOrUndefined (ErrorMessage) } -> {"message" :: NullOrUndefined (ErrorMessage) } ) -> DescribeAttachmentLimitExceeded
-newDescribeAttachmentLimitExceeded'  customize = (DescribeAttachmentLimitExceeded <<< customize) { "message": (NullOrUndefined Nothing) }
+newDescribeAttachmentLimitExceeded' :: ( { "message" :: Maybe (ErrorMessage) } -> {"message" :: Maybe (ErrorMessage) } ) -> DescribeAttachmentLimitExceeded
+newDescribeAttachmentLimitExceeded'  customize = (DescribeAttachmentLimitExceeded <<< customize) { "message": Nothing }
 
 
 
@@ -632,7 +631,7 @@ newDescribeAttachmentRequest' _attachmentId customize = (DescribeAttachmentReque
 
 -- | <p>The content and file name of the attachment returned by the <a>DescribeAttachment</a> operation.</p>
 newtype DescribeAttachmentResponse = DescribeAttachmentResponse 
-  { "attachment" :: NullOrUndefined (Attachment)
+  { "attachment" :: Maybe (Attachment)
   }
 derive instance newtypeDescribeAttachmentResponse :: Newtype DescribeAttachmentResponse _
 derive instance repGenericDescribeAttachmentResponse :: Generic DescribeAttachmentResponse _
@@ -642,26 +641,26 @@ instance encodeDescribeAttachmentResponse :: Encode DescribeAttachmentResponse w
 
 -- | Constructs DescribeAttachmentResponse from required parameters
 newDescribeAttachmentResponse :: DescribeAttachmentResponse
-newDescribeAttachmentResponse  = DescribeAttachmentResponse { "attachment": (NullOrUndefined Nothing) }
+newDescribeAttachmentResponse  = DescribeAttachmentResponse { "attachment": Nothing }
 
 -- | Constructs DescribeAttachmentResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAttachmentResponse' :: ( { "attachment" :: NullOrUndefined (Attachment) } -> {"attachment" :: NullOrUndefined (Attachment) } ) -> DescribeAttachmentResponse
-newDescribeAttachmentResponse'  customize = (DescribeAttachmentResponse <<< customize) { "attachment": (NullOrUndefined Nothing) }
+newDescribeAttachmentResponse' :: ( { "attachment" :: Maybe (Attachment) } -> {"attachment" :: Maybe (Attachment) } ) -> DescribeAttachmentResponse
+newDescribeAttachmentResponse'  customize = (DescribeAttachmentResponse <<< customize) { "attachment": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeCasesRequest = DescribeCasesRequest 
-  { "caseIdList" :: NullOrUndefined (CaseIdList)
-  , "displayId" :: NullOrUndefined (DisplayId)
-  , "afterTime" :: NullOrUndefined (AfterTime)
-  , "beforeTime" :: NullOrUndefined (BeforeTime)
-  , "includeResolvedCases" :: NullOrUndefined (IncludeResolvedCases)
-  , "nextToken" :: NullOrUndefined (NextToken)
-  , "maxResults" :: NullOrUndefined (MaxResults)
-  , "language" :: NullOrUndefined (Language)
-  , "includeCommunications" :: NullOrUndefined (IncludeCommunications)
+  { "caseIdList" :: Maybe (CaseIdList)
+  , "displayId" :: Maybe (DisplayId)
+  , "afterTime" :: Maybe (AfterTime)
+  , "beforeTime" :: Maybe (BeforeTime)
+  , "includeResolvedCases" :: Maybe (IncludeResolvedCases)
+  , "nextToken" :: Maybe (NextToken)
+  , "maxResults" :: Maybe (MaxResults)
+  , "language" :: Maybe (Language)
+  , "includeCommunications" :: Maybe (IncludeCommunications)
   }
 derive instance newtypeDescribeCasesRequest :: Newtype DescribeCasesRequest _
 derive instance repGenericDescribeCasesRequest :: Generic DescribeCasesRequest _
@@ -671,19 +670,19 @@ instance encodeDescribeCasesRequest :: Encode DescribeCasesRequest where encode 
 
 -- | Constructs DescribeCasesRequest from required parameters
 newDescribeCasesRequest :: DescribeCasesRequest
-newDescribeCasesRequest  = DescribeCasesRequest { "afterTime": (NullOrUndefined Nothing), "beforeTime": (NullOrUndefined Nothing), "caseIdList": (NullOrUndefined Nothing), "displayId": (NullOrUndefined Nothing), "includeCommunications": (NullOrUndefined Nothing), "includeResolvedCases": (NullOrUndefined Nothing), "language": (NullOrUndefined Nothing), "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newDescribeCasesRequest  = DescribeCasesRequest { "afterTime": Nothing, "beforeTime": Nothing, "caseIdList": Nothing, "displayId": Nothing, "includeCommunications": Nothing, "includeResolvedCases": Nothing, "language": Nothing, "maxResults": Nothing, "nextToken": Nothing }
 
 -- | Constructs DescribeCasesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeCasesRequest' :: ( { "caseIdList" :: NullOrUndefined (CaseIdList) , "displayId" :: NullOrUndefined (DisplayId) , "afterTime" :: NullOrUndefined (AfterTime) , "beforeTime" :: NullOrUndefined (BeforeTime) , "includeResolvedCases" :: NullOrUndefined (IncludeResolvedCases) , "nextToken" :: NullOrUndefined (NextToken) , "maxResults" :: NullOrUndefined (MaxResults) , "language" :: NullOrUndefined (Language) , "includeCommunications" :: NullOrUndefined (IncludeCommunications) } -> {"caseIdList" :: NullOrUndefined (CaseIdList) , "displayId" :: NullOrUndefined (DisplayId) , "afterTime" :: NullOrUndefined (AfterTime) , "beforeTime" :: NullOrUndefined (BeforeTime) , "includeResolvedCases" :: NullOrUndefined (IncludeResolvedCases) , "nextToken" :: NullOrUndefined (NextToken) , "maxResults" :: NullOrUndefined (MaxResults) , "language" :: NullOrUndefined (Language) , "includeCommunications" :: NullOrUndefined (IncludeCommunications) } ) -> DescribeCasesRequest
-newDescribeCasesRequest'  customize = (DescribeCasesRequest <<< customize) { "afterTime": (NullOrUndefined Nothing), "beforeTime": (NullOrUndefined Nothing), "caseIdList": (NullOrUndefined Nothing), "displayId": (NullOrUndefined Nothing), "includeCommunications": (NullOrUndefined Nothing), "includeResolvedCases": (NullOrUndefined Nothing), "language": (NullOrUndefined Nothing), "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newDescribeCasesRequest' :: ( { "caseIdList" :: Maybe (CaseIdList) , "displayId" :: Maybe (DisplayId) , "afterTime" :: Maybe (AfterTime) , "beforeTime" :: Maybe (BeforeTime) , "includeResolvedCases" :: Maybe (IncludeResolvedCases) , "nextToken" :: Maybe (NextToken) , "maxResults" :: Maybe (MaxResults) , "language" :: Maybe (Language) , "includeCommunications" :: Maybe (IncludeCommunications) } -> {"caseIdList" :: Maybe (CaseIdList) , "displayId" :: Maybe (DisplayId) , "afterTime" :: Maybe (AfterTime) , "beforeTime" :: Maybe (BeforeTime) , "includeResolvedCases" :: Maybe (IncludeResolvedCases) , "nextToken" :: Maybe (NextToken) , "maxResults" :: Maybe (MaxResults) , "language" :: Maybe (Language) , "includeCommunications" :: Maybe (IncludeCommunications) } ) -> DescribeCasesRequest
+newDescribeCasesRequest'  customize = (DescribeCasesRequest <<< customize) { "afterTime": Nothing, "beforeTime": Nothing, "caseIdList": Nothing, "displayId": Nothing, "includeCommunications": Nothing, "includeResolvedCases": Nothing, "language": Nothing, "maxResults": Nothing, "nextToken": Nothing }
 
 
 
 -- | <p>Returns an array of <a>CaseDetails</a> objects and a <code>nextToken</code> that defines a point for pagination in the result set.</p>
 newtype DescribeCasesResponse = DescribeCasesResponse 
-  { "cases" :: NullOrUndefined (CaseList)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  { "cases" :: Maybe (CaseList)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeCasesResponse :: Newtype DescribeCasesResponse _
 derive instance repGenericDescribeCasesResponse :: Generic DescribeCasesResponse _
@@ -693,22 +692,22 @@ instance encodeDescribeCasesResponse :: Encode DescribeCasesResponse where encod
 
 -- | Constructs DescribeCasesResponse from required parameters
 newDescribeCasesResponse :: DescribeCasesResponse
-newDescribeCasesResponse  = DescribeCasesResponse { "cases": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newDescribeCasesResponse  = DescribeCasesResponse { "cases": Nothing, "nextToken": Nothing }
 
 -- | Constructs DescribeCasesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeCasesResponse' :: ( { "cases" :: NullOrUndefined (CaseList) , "nextToken" :: NullOrUndefined (NextToken) } -> {"cases" :: NullOrUndefined (CaseList) , "nextToken" :: NullOrUndefined (NextToken) } ) -> DescribeCasesResponse
-newDescribeCasesResponse'  customize = (DescribeCasesResponse <<< customize) { "cases": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newDescribeCasesResponse' :: ( { "cases" :: Maybe (CaseList) , "nextToken" :: Maybe (NextToken) } -> {"cases" :: Maybe (CaseList) , "nextToken" :: Maybe (NextToken) } ) -> DescribeCasesResponse
+newDescribeCasesResponse'  customize = (DescribeCasesResponse <<< customize) { "cases": Nothing, "nextToken": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeCommunicationsRequest = DescribeCommunicationsRequest 
   { "caseId" :: (CaseId)
-  , "beforeTime" :: NullOrUndefined (BeforeTime)
-  , "afterTime" :: NullOrUndefined (AfterTime)
-  , "nextToken" :: NullOrUndefined (NextToken)
-  , "maxResults" :: NullOrUndefined (MaxResults)
+  , "beforeTime" :: Maybe (BeforeTime)
+  , "afterTime" :: Maybe (AfterTime)
+  , "nextToken" :: Maybe (NextToken)
+  , "maxResults" :: Maybe (MaxResults)
   }
 derive instance newtypeDescribeCommunicationsRequest :: Newtype DescribeCommunicationsRequest _
 derive instance repGenericDescribeCommunicationsRequest :: Generic DescribeCommunicationsRequest _
@@ -718,19 +717,19 @@ instance encodeDescribeCommunicationsRequest :: Encode DescribeCommunicationsReq
 
 -- | Constructs DescribeCommunicationsRequest from required parameters
 newDescribeCommunicationsRequest :: CaseId -> DescribeCommunicationsRequest
-newDescribeCommunicationsRequest _caseId = DescribeCommunicationsRequest { "caseId": _caseId, "afterTime": (NullOrUndefined Nothing), "beforeTime": (NullOrUndefined Nothing), "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newDescribeCommunicationsRequest _caseId = DescribeCommunicationsRequest { "caseId": _caseId, "afterTime": Nothing, "beforeTime": Nothing, "maxResults": Nothing, "nextToken": Nothing }
 
 -- | Constructs DescribeCommunicationsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeCommunicationsRequest' :: CaseId -> ( { "caseId" :: (CaseId) , "beforeTime" :: NullOrUndefined (BeforeTime) , "afterTime" :: NullOrUndefined (AfterTime) , "nextToken" :: NullOrUndefined (NextToken) , "maxResults" :: NullOrUndefined (MaxResults) } -> {"caseId" :: (CaseId) , "beforeTime" :: NullOrUndefined (BeforeTime) , "afterTime" :: NullOrUndefined (AfterTime) , "nextToken" :: NullOrUndefined (NextToken) , "maxResults" :: NullOrUndefined (MaxResults) } ) -> DescribeCommunicationsRequest
-newDescribeCommunicationsRequest' _caseId customize = (DescribeCommunicationsRequest <<< customize) { "caseId": _caseId, "afterTime": (NullOrUndefined Nothing), "beforeTime": (NullOrUndefined Nothing), "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newDescribeCommunicationsRequest' :: CaseId -> ( { "caseId" :: (CaseId) , "beforeTime" :: Maybe (BeforeTime) , "afterTime" :: Maybe (AfterTime) , "nextToken" :: Maybe (NextToken) , "maxResults" :: Maybe (MaxResults) } -> {"caseId" :: (CaseId) , "beforeTime" :: Maybe (BeforeTime) , "afterTime" :: Maybe (AfterTime) , "nextToken" :: Maybe (NextToken) , "maxResults" :: Maybe (MaxResults) } ) -> DescribeCommunicationsRequest
+newDescribeCommunicationsRequest' _caseId customize = (DescribeCommunicationsRequest <<< customize) { "caseId": _caseId, "afterTime": Nothing, "beforeTime": Nothing, "maxResults": Nothing, "nextToken": Nothing }
 
 
 
 -- | <p>The communications returned by the <a>DescribeCommunications</a> operation.</p>
 newtype DescribeCommunicationsResponse = DescribeCommunicationsResponse 
-  { "communications" :: NullOrUndefined (CommunicationList)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  { "communications" :: Maybe (CommunicationList)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeCommunicationsResponse :: Newtype DescribeCommunicationsResponse _
 derive instance repGenericDescribeCommunicationsResponse :: Generic DescribeCommunicationsResponse _
@@ -740,19 +739,19 @@ instance encodeDescribeCommunicationsResponse :: Encode DescribeCommunicationsRe
 
 -- | Constructs DescribeCommunicationsResponse from required parameters
 newDescribeCommunicationsResponse :: DescribeCommunicationsResponse
-newDescribeCommunicationsResponse  = DescribeCommunicationsResponse { "communications": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newDescribeCommunicationsResponse  = DescribeCommunicationsResponse { "communications": Nothing, "nextToken": Nothing }
 
 -- | Constructs DescribeCommunicationsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeCommunicationsResponse' :: ( { "communications" :: NullOrUndefined (CommunicationList) , "nextToken" :: NullOrUndefined (NextToken) } -> {"communications" :: NullOrUndefined (CommunicationList) , "nextToken" :: NullOrUndefined (NextToken) } ) -> DescribeCommunicationsResponse
-newDescribeCommunicationsResponse'  customize = (DescribeCommunicationsResponse <<< customize) { "communications": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newDescribeCommunicationsResponse' :: ( { "communications" :: Maybe (CommunicationList) , "nextToken" :: Maybe (NextToken) } -> {"communications" :: Maybe (CommunicationList) , "nextToken" :: Maybe (NextToken) } ) -> DescribeCommunicationsResponse
+newDescribeCommunicationsResponse'  customize = (DescribeCommunicationsResponse <<< customize) { "communications": Nothing, "nextToken": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeServicesRequest = DescribeServicesRequest 
-  { "serviceCodeList" :: NullOrUndefined (ServiceCodeList)
-  , "language" :: NullOrUndefined (Language)
+  { "serviceCodeList" :: Maybe (ServiceCodeList)
+  , "language" :: Maybe (Language)
   }
 derive instance newtypeDescribeServicesRequest :: Newtype DescribeServicesRequest _
 derive instance repGenericDescribeServicesRequest :: Generic DescribeServicesRequest _
@@ -762,18 +761,18 @@ instance encodeDescribeServicesRequest :: Encode DescribeServicesRequest where e
 
 -- | Constructs DescribeServicesRequest from required parameters
 newDescribeServicesRequest :: DescribeServicesRequest
-newDescribeServicesRequest  = DescribeServicesRequest { "language": (NullOrUndefined Nothing), "serviceCodeList": (NullOrUndefined Nothing) }
+newDescribeServicesRequest  = DescribeServicesRequest { "language": Nothing, "serviceCodeList": Nothing }
 
 -- | Constructs DescribeServicesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeServicesRequest' :: ( { "serviceCodeList" :: NullOrUndefined (ServiceCodeList) , "language" :: NullOrUndefined (Language) } -> {"serviceCodeList" :: NullOrUndefined (ServiceCodeList) , "language" :: NullOrUndefined (Language) } ) -> DescribeServicesRequest
-newDescribeServicesRequest'  customize = (DescribeServicesRequest <<< customize) { "language": (NullOrUndefined Nothing), "serviceCodeList": (NullOrUndefined Nothing) }
+newDescribeServicesRequest' :: ( { "serviceCodeList" :: Maybe (ServiceCodeList) , "language" :: Maybe (Language) } -> {"serviceCodeList" :: Maybe (ServiceCodeList) , "language" :: Maybe (Language) } ) -> DescribeServicesRequest
+newDescribeServicesRequest'  customize = (DescribeServicesRequest <<< customize) { "language": Nothing, "serviceCodeList": Nothing }
 
 
 
 -- | <p>The list of AWS services returned by the <a>DescribeServices</a> operation.</p>
 newtype DescribeServicesResponse = DescribeServicesResponse 
-  { "services" :: NullOrUndefined (ServiceList)
+  { "services" :: Maybe (ServiceList)
   }
 derive instance newtypeDescribeServicesResponse :: Newtype DescribeServicesResponse _
 derive instance repGenericDescribeServicesResponse :: Generic DescribeServicesResponse _
@@ -783,18 +782,18 @@ instance encodeDescribeServicesResponse :: Encode DescribeServicesResponse where
 
 -- | Constructs DescribeServicesResponse from required parameters
 newDescribeServicesResponse :: DescribeServicesResponse
-newDescribeServicesResponse  = DescribeServicesResponse { "services": (NullOrUndefined Nothing) }
+newDescribeServicesResponse  = DescribeServicesResponse { "services": Nothing }
 
 -- | Constructs DescribeServicesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeServicesResponse' :: ( { "services" :: NullOrUndefined (ServiceList) } -> {"services" :: NullOrUndefined (ServiceList) } ) -> DescribeServicesResponse
-newDescribeServicesResponse'  customize = (DescribeServicesResponse <<< customize) { "services": (NullOrUndefined Nothing) }
+newDescribeServicesResponse' :: ( { "services" :: Maybe (ServiceList) } -> {"services" :: Maybe (ServiceList) } ) -> DescribeServicesResponse
+newDescribeServicesResponse'  customize = (DescribeServicesResponse <<< customize) { "services": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeSeverityLevelsRequest = DescribeSeverityLevelsRequest 
-  { "language" :: NullOrUndefined (Language)
+  { "language" :: Maybe (Language)
   }
 derive instance newtypeDescribeSeverityLevelsRequest :: Newtype DescribeSeverityLevelsRequest _
 derive instance repGenericDescribeSeverityLevelsRequest :: Generic DescribeSeverityLevelsRequest _
@@ -804,18 +803,18 @@ instance encodeDescribeSeverityLevelsRequest :: Encode DescribeSeverityLevelsReq
 
 -- | Constructs DescribeSeverityLevelsRequest from required parameters
 newDescribeSeverityLevelsRequest :: DescribeSeverityLevelsRequest
-newDescribeSeverityLevelsRequest  = DescribeSeverityLevelsRequest { "language": (NullOrUndefined Nothing) }
+newDescribeSeverityLevelsRequest  = DescribeSeverityLevelsRequest { "language": Nothing }
 
 -- | Constructs DescribeSeverityLevelsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeSeverityLevelsRequest' :: ( { "language" :: NullOrUndefined (Language) } -> {"language" :: NullOrUndefined (Language) } ) -> DescribeSeverityLevelsRequest
-newDescribeSeverityLevelsRequest'  customize = (DescribeSeverityLevelsRequest <<< customize) { "language": (NullOrUndefined Nothing) }
+newDescribeSeverityLevelsRequest' :: ( { "language" :: Maybe (Language) } -> {"language" :: Maybe (Language) } ) -> DescribeSeverityLevelsRequest
+newDescribeSeverityLevelsRequest'  customize = (DescribeSeverityLevelsRequest <<< customize) { "language": Nothing }
 
 
 
 -- | <p>The list of severity levels returned by the <a>DescribeSeverityLevels</a> operation.</p>
 newtype DescribeSeverityLevelsResponse = DescribeSeverityLevelsResponse 
-  { "severityLevels" :: NullOrUndefined (SeverityLevelsList)
+  { "severityLevels" :: Maybe (SeverityLevelsList)
   }
 derive instance newtypeDescribeSeverityLevelsResponse :: Newtype DescribeSeverityLevelsResponse _
 derive instance repGenericDescribeSeverityLevelsResponse :: Generic DescribeSeverityLevelsResponse _
@@ -825,12 +824,12 @@ instance encodeDescribeSeverityLevelsResponse :: Encode DescribeSeverityLevelsRe
 
 -- | Constructs DescribeSeverityLevelsResponse from required parameters
 newDescribeSeverityLevelsResponse :: DescribeSeverityLevelsResponse
-newDescribeSeverityLevelsResponse  = DescribeSeverityLevelsResponse { "severityLevels": (NullOrUndefined Nothing) }
+newDescribeSeverityLevelsResponse  = DescribeSeverityLevelsResponse { "severityLevels": Nothing }
 
 -- | Constructs DescribeSeverityLevelsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeSeverityLevelsResponse' :: ( { "severityLevels" :: NullOrUndefined (SeverityLevelsList) } -> {"severityLevels" :: NullOrUndefined (SeverityLevelsList) } ) -> DescribeSeverityLevelsResponse
-newDescribeSeverityLevelsResponse'  customize = (DescribeSeverityLevelsResponse <<< customize) { "severityLevels": (NullOrUndefined Nothing) }
+newDescribeSeverityLevelsResponse' :: ( { "severityLevels" :: Maybe (SeverityLevelsList) } -> {"severityLevels" :: Maybe (SeverityLevelsList) } ) -> DescribeSeverityLevelsResponse
+newDescribeSeverityLevelsResponse'  customize = (DescribeSeverityLevelsResponse <<< customize) { "severityLevels": Nothing }
 
 
 
@@ -879,7 +878,7 @@ newDescribeTrustedAdvisorCheckRefreshStatusesResponse' _statuses customize = (De
 -- | <p/>
 newtype DescribeTrustedAdvisorCheckResultRequest = DescribeTrustedAdvisorCheckResultRequest 
   { "checkId" :: (String)
-  , "language" :: NullOrUndefined (String)
+  , "language" :: Maybe (String)
   }
 derive instance newtypeDescribeTrustedAdvisorCheckResultRequest :: Newtype DescribeTrustedAdvisorCheckResultRequest _
 derive instance repGenericDescribeTrustedAdvisorCheckResultRequest :: Generic DescribeTrustedAdvisorCheckResultRequest _
@@ -889,18 +888,18 @@ instance encodeDescribeTrustedAdvisorCheckResultRequest :: Encode DescribeTruste
 
 -- | Constructs DescribeTrustedAdvisorCheckResultRequest from required parameters
 newDescribeTrustedAdvisorCheckResultRequest :: String -> DescribeTrustedAdvisorCheckResultRequest
-newDescribeTrustedAdvisorCheckResultRequest _checkId = DescribeTrustedAdvisorCheckResultRequest { "checkId": _checkId, "language": (NullOrUndefined Nothing) }
+newDescribeTrustedAdvisorCheckResultRequest _checkId = DescribeTrustedAdvisorCheckResultRequest { "checkId": _checkId, "language": Nothing }
 
 -- | Constructs DescribeTrustedAdvisorCheckResultRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeTrustedAdvisorCheckResultRequest' :: String -> ( { "checkId" :: (String) , "language" :: NullOrUndefined (String) } -> {"checkId" :: (String) , "language" :: NullOrUndefined (String) } ) -> DescribeTrustedAdvisorCheckResultRequest
-newDescribeTrustedAdvisorCheckResultRequest' _checkId customize = (DescribeTrustedAdvisorCheckResultRequest <<< customize) { "checkId": _checkId, "language": (NullOrUndefined Nothing) }
+newDescribeTrustedAdvisorCheckResultRequest' :: String -> ( { "checkId" :: (String) , "language" :: Maybe (String) } -> {"checkId" :: (String) , "language" :: Maybe (String) } ) -> DescribeTrustedAdvisorCheckResultRequest
+newDescribeTrustedAdvisorCheckResultRequest' _checkId customize = (DescribeTrustedAdvisorCheckResultRequest <<< customize) { "checkId": _checkId, "language": Nothing }
 
 
 
 -- | <p>The result of the Trusted Advisor check returned by the <a>DescribeTrustedAdvisorCheckResult</a> operation.</p>
 newtype DescribeTrustedAdvisorCheckResultResponse = DescribeTrustedAdvisorCheckResultResponse 
-  { "result" :: NullOrUndefined (TrustedAdvisorCheckResult)
+  { "result" :: Maybe (TrustedAdvisorCheckResult)
   }
 derive instance newtypeDescribeTrustedAdvisorCheckResultResponse :: Newtype DescribeTrustedAdvisorCheckResultResponse _
 derive instance repGenericDescribeTrustedAdvisorCheckResultResponse :: Generic DescribeTrustedAdvisorCheckResultResponse _
@@ -910,12 +909,12 @@ instance encodeDescribeTrustedAdvisorCheckResultResponse :: Encode DescribeTrust
 
 -- | Constructs DescribeTrustedAdvisorCheckResultResponse from required parameters
 newDescribeTrustedAdvisorCheckResultResponse :: DescribeTrustedAdvisorCheckResultResponse
-newDescribeTrustedAdvisorCheckResultResponse  = DescribeTrustedAdvisorCheckResultResponse { "result": (NullOrUndefined Nothing) }
+newDescribeTrustedAdvisorCheckResultResponse  = DescribeTrustedAdvisorCheckResultResponse { "result": Nothing }
 
 -- | Constructs DescribeTrustedAdvisorCheckResultResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeTrustedAdvisorCheckResultResponse' :: ( { "result" :: NullOrUndefined (TrustedAdvisorCheckResult) } -> {"result" :: NullOrUndefined (TrustedAdvisorCheckResult) } ) -> DescribeTrustedAdvisorCheckResultResponse
-newDescribeTrustedAdvisorCheckResultResponse'  customize = (DescribeTrustedAdvisorCheckResultResponse <<< customize) { "result": (NullOrUndefined Nothing) }
+newDescribeTrustedAdvisorCheckResultResponse' :: ( { "result" :: Maybe (TrustedAdvisorCheckResult) } -> {"result" :: Maybe (TrustedAdvisorCheckResult) } ) -> DescribeTrustedAdvisorCheckResultResponse
+newDescribeTrustedAdvisorCheckResultResponse'  customize = (DescribeTrustedAdvisorCheckResultResponse <<< customize) { "result": Nothing }
 
 
 
@@ -1059,7 +1058,7 @@ instance encodeIncludeResolvedCases :: Encode IncludeResolvedCases where encode 
 
 -- | <p>An internal server error occurred.</p>
 newtype InternalServerError = InternalServerError 
-  { "message" :: NullOrUndefined (ErrorMessage)
+  { "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeInternalServerError :: Newtype InternalServerError _
 derive instance repGenericInternalServerError :: Generic InternalServerError _
@@ -1069,12 +1068,12 @@ instance encodeInternalServerError :: Encode InternalServerError where encode = 
 
 -- | Constructs InternalServerError from required parameters
 newInternalServerError :: InternalServerError
-newInternalServerError  = InternalServerError { "message": (NullOrUndefined Nothing) }
+newInternalServerError  = InternalServerError { "message": Nothing }
 
 -- | Constructs InternalServerError's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInternalServerError' :: ( { "message" :: NullOrUndefined (ErrorMessage) } -> {"message" :: NullOrUndefined (ErrorMessage) } ) -> InternalServerError
-newInternalServerError'  customize = (InternalServerError <<< customize) { "message": (NullOrUndefined Nothing) }
+newInternalServerError' :: ( { "message" :: Maybe (ErrorMessage) } -> {"message" :: Maybe (ErrorMessage) } ) -> InternalServerError
+newInternalServerError'  customize = (InternalServerError <<< customize) { "message": Nothing }
 
 
 
@@ -1116,8 +1115,8 @@ instance encodeNextToken :: Encode NextToken where encode = genericEncode option
 
 -- | <p>The five most recent communications associated with the case.</p>
 newtype RecentCaseCommunications = RecentCaseCommunications 
-  { "communications" :: NullOrUndefined (CommunicationList)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  { "communications" :: Maybe (CommunicationList)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeRecentCaseCommunications :: Newtype RecentCaseCommunications _
 derive instance repGenericRecentCaseCommunications :: Generic RecentCaseCommunications _
@@ -1127,12 +1126,12 @@ instance encodeRecentCaseCommunications :: Encode RecentCaseCommunications where
 
 -- | Constructs RecentCaseCommunications from required parameters
 newRecentCaseCommunications :: RecentCaseCommunications
-newRecentCaseCommunications  = RecentCaseCommunications { "communications": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newRecentCaseCommunications  = RecentCaseCommunications { "communications": Nothing, "nextToken": Nothing }
 
 -- | Constructs RecentCaseCommunications's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRecentCaseCommunications' :: ( { "communications" :: NullOrUndefined (CommunicationList) , "nextToken" :: NullOrUndefined (NextToken) } -> {"communications" :: NullOrUndefined (CommunicationList) , "nextToken" :: NullOrUndefined (NextToken) } ) -> RecentCaseCommunications
-newRecentCaseCommunications'  customize = (RecentCaseCommunications <<< customize) { "communications": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newRecentCaseCommunications' :: ( { "communications" :: Maybe (CommunicationList) , "nextToken" :: Maybe (NextToken) } -> {"communications" :: Maybe (CommunicationList) , "nextToken" :: Maybe (NextToken) } ) -> RecentCaseCommunications
+newRecentCaseCommunications'  customize = (RecentCaseCommunications <<< customize) { "communications": Nothing, "nextToken": Nothing }
 
 
 
@@ -1180,7 +1179,7 @@ newRefreshTrustedAdvisorCheckResponse' _status customize = (RefreshTrustedAdviso
 
 -- | <p/>
 newtype ResolveCaseRequest = ResolveCaseRequest 
-  { "caseId" :: NullOrUndefined (CaseId)
+  { "caseId" :: Maybe (CaseId)
   }
 derive instance newtypeResolveCaseRequest :: Newtype ResolveCaseRequest _
 derive instance repGenericResolveCaseRequest :: Generic ResolveCaseRequest _
@@ -1190,19 +1189,19 @@ instance encodeResolveCaseRequest :: Encode ResolveCaseRequest where encode = ge
 
 -- | Constructs ResolveCaseRequest from required parameters
 newResolveCaseRequest :: ResolveCaseRequest
-newResolveCaseRequest  = ResolveCaseRequest { "caseId": (NullOrUndefined Nothing) }
+newResolveCaseRequest  = ResolveCaseRequest { "caseId": Nothing }
 
 -- | Constructs ResolveCaseRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResolveCaseRequest' :: ( { "caseId" :: NullOrUndefined (CaseId) } -> {"caseId" :: NullOrUndefined (CaseId) } ) -> ResolveCaseRequest
-newResolveCaseRequest'  customize = (ResolveCaseRequest <<< customize) { "caseId": (NullOrUndefined Nothing) }
+newResolveCaseRequest' :: ( { "caseId" :: Maybe (CaseId) } -> {"caseId" :: Maybe (CaseId) } ) -> ResolveCaseRequest
+newResolveCaseRequest'  customize = (ResolveCaseRequest <<< customize) { "caseId": Nothing }
 
 
 
 -- | <p>The status of the case returned by the <a>ResolveCase</a> operation.</p>
 newtype ResolveCaseResponse = ResolveCaseResponse 
-  { "initialCaseStatus" :: NullOrUndefined (CaseStatus)
-  , "finalCaseStatus" :: NullOrUndefined (CaseStatus)
+  { "initialCaseStatus" :: Maybe (CaseStatus)
+  , "finalCaseStatus" :: Maybe (CaseStatus)
   }
 derive instance newtypeResolveCaseResponse :: Newtype ResolveCaseResponse _
 derive instance repGenericResolveCaseResponse :: Generic ResolveCaseResponse _
@@ -1212,12 +1211,12 @@ instance encodeResolveCaseResponse :: Encode ResolveCaseResponse where encode = 
 
 -- | Constructs ResolveCaseResponse from required parameters
 newResolveCaseResponse :: ResolveCaseResponse
-newResolveCaseResponse  = ResolveCaseResponse { "finalCaseStatus": (NullOrUndefined Nothing), "initialCaseStatus": (NullOrUndefined Nothing) }
+newResolveCaseResponse  = ResolveCaseResponse { "finalCaseStatus": Nothing, "initialCaseStatus": Nothing }
 
 -- | Constructs ResolveCaseResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResolveCaseResponse' :: ( { "initialCaseStatus" :: NullOrUndefined (CaseStatus) , "finalCaseStatus" :: NullOrUndefined (CaseStatus) } -> {"initialCaseStatus" :: NullOrUndefined (CaseStatus) , "finalCaseStatus" :: NullOrUndefined (CaseStatus) } ) -> ResolveCaseResponse
-newResolveCaseResponse'  customize = (ResolveCaseResponse <<< customize) { "finalCaseStatus": (NullOrUndefined Nothing), "initialCaseStatus": (NullOrUndefined Nothing) }
+newResolveCaseResponse' :: ( { "initialCaseStatus" :: Maybe (CaseStatus) , "finalCaseStatus" :: Maybe (CaseStatus) } -> {"initialCaseStatus" :: Maybe (CaseStatus) , "finalCaseStatus" :: Maybe (CaseStatus) } ) -> ResolveCaseResponse
+newResolveCaseResponse'  customize = (ResolveCaseResponse <<< customize) { "finalCaseStatus": Nothing, "initialCaseStatus": Nothing }
 
 
 
@@ -1232,9 +1231,9 @@ instance encodeResult :: Encode Result where encode = genericEncode options
 
 -- | <p>Information about an AWS service returned by the <a>DescribeServices</a> operation. </p>
 newtype Service = Service 
-  { "code" :: NullOrUndefined (ServiceCode)
-  , "name" :: NullOrUndefined (ServiceName)
-  , "categories" :: NullOrUndefined (CategoryList)
+  { "code" :: Maybe (ServiceCode)
+  , "name" :: Maybe (ServiceName)
+  , "categories" :: Maybe (CategoryList)
   }
 derive instance newtypeService :: Newtype Service _
 derive instance repGenericService :: Generic Service _
@@ -1244,12 +1243,12 @@ instance encodeService :: Encode Service where encode = genericEncode options
 
 -- | Constructs Service from required parameters
 newService :: Service
-newService  = Service { "categories": (NullOrUndefined Nothing), "code": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing) }
+newService  = Service { "categories": Nothing, "code": Nothing, "name": Nothing }
 
 -- | Constructs Service's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newService' :: ( { "code" :: NullOrUndefined (ServiceCode) , "name" :: NullOrUndefined (ServiceName) , "categories" :: NullOrUndefined (CategoryList) } -> {"code" :: NullOrUndefined (ServiceCode) , "name" :: NullOrUndefined (ServiceName) , "categories" :: NullOrUndefined (CategoryList) } ) -> Service
-newService'  customize = (Service <<< customize) { "categories": (NullOrUndefined Nothing), "code": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing) }
+newService' :: ( { "code" :: Maybe (ServiceCode) , "name" :: Maybe (ServiceName) , "categories" :: Maybe (CategoryList) } -> {"code" :: Maybe (ServiceCode) , "name" :: Maybe (ServiceName) , "categories" :: Maybe (CategoryList) } ) -> Service
+newService'  customize = (Service <<< customize) { "categories": Nothing, "code": Nothing, "name": Nothing }
 
 
 
@@ -1300,8 +1299,8 @@ instance encodeSeverityCode :: Encode SeverityCode where encode = genericEncode 
 
 -- | <p>A code and name pair that represent a severity level that can be applied to a support case.</p>
 newtype SeverityLevel = SeverityLevel 
-  { "code" :: NullOrUndefined (SeverityLevelCode)
-  , "name" :: NullOrUndefined (SeverityLevelName)
+  { "code" :: Maybe (SeverityLevelCode)
+  , "name" :: Maybe (SeverityLevelName)
   }
 derive instance newtypeSeverityLevel :: Newtype SeverityLevel _
 derive instance repGenericSeverityLevel :: Generic SeverityLevel _
@@ -1311,12 +1310,12 @@ instance encodeSeverityLevel :: Encode SeverityLevel where encode = genericEncod
 
 -- | Constructs SeverityLevel from required parameters
 newSeverityLevel :: SeverityLevel
-newSeverityLevel  = SeverityLevel { "code": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing) }
+newSeverityLevel  = SeverityLevel { "code": Nothing, "name": Nothing }
 
 -- | Constructs SeverityLevel's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSeverityLevel' :: ( { "code" :: NullOrUndefined (SeverityLevelCode) , "name" :: NullOrUndefined (SeverityLevelName) } -> {"code" :: NullOrUndefined (SeverityLevelCode) , "name" :: NullOrUndefined (SeverityLevelName) } ) -> SeverityLevel
-newSeverityLevel'  customize = (SeverityLevel <<< customize) { "code": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing) }
+newSeverityLevel' :: ( { "code" :: Maybe (SeverityLevelCode) , "name" :: Maybe (SeverityLevelName) } -> {"code" :: Maybe (SeverityLevelCode) , "name" :: Maybe (SeverityLevelName) } ) -> SeverityLevel
+newSeverityLevel'  customize = (SeverityLevel <<< customize) { "code": Nothing, "name": Nothing }
 
 
 
@@ -1394,7 +1393,7 @@ instance encodeTimeCreated :: Encode TimeCreated where encode = genericEncode op
 
 -- | <p>The container for summary information that relates to the category of the Trusted Advisor check.</p>
 newtype TrustedAdvisorCategorySpecificSummary = TrustedAdvisorCategorySpecificSummary 
-  { "costOptimizing" :: NullOrUndefined (TrustedAdvisorCostOptimizingSummary)
+  { "costOptimizing" :: Maybe (TrustedAdvisorCostOptimizingSummary)
   }
 derive instance newtypeTrustedAdvisorCategorySpecificSummary :: Newtype TrustedAdvisorCategorySpecificSummary _
 derive instance repGenericTrustedAdvisorCategorySpecificSummary :: Generic TrustedAdvisorCategorySpecificSummary _
@@ -1404,12 +1403,12 @@ instance encodeTrustedAdvisorCategorySpecificSummary :: Encode TrustedAdvisorCat
 
 -- | Constructs TrustedAdvisorCategorySpecificSummary from required parameters
 newTrustedAdvisorCategorySpecificSummary :: TrustedAdvisorCategorySpecificSummary
-newTrustedAdvisorCategorySpecificSummary  = TrustedAdvisorCategorySpecificSummary { "costOptimizing": (NullOrUndefined Nothing) }
+newTrustedAdvisorCategorySpecificSummary  = TrustedAdvisorCategorySpecificSummary { "costOptimizing": Nothing }
 
 -- | Constructs TrustedAdvisorCategorySpecificSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTrustedAdvisorCategorySpecificSummary' :: ( { "costOptimizing" :: NullOrUndefined (TrustedAdvisorCostOptimizingSummary) } -> {"costOptimizing" :: NullOrUndefined (TrustedAdvisorCostOptimizingSummary) } ) -> TrustedAdvisorCategorySpecificSummary
-newTrustedAdvisorCategorySpecificSummary'  customize = (TrustedAdvisorCategorySpecificSummary <<< customize) { "costOptimizing": (NullOrUndefined Nothing) }
+newTrustedAdvisorCategorySpecificSummary' :: ( { "costOptimizing" :: Maybe (TrustedAdvisorCostOptimizingSummary) } -> {"costOptimizing" :: Maybe (TrustedAdvisorCostOptimizingSummary) } ) -> TrustedAdvisorCategorySpecificSummary
+newTrustedAdvisorCategorySpecificSummary'  customize = (TrustedAdvisorCategorySpecificSummary <<< customize) { "costOptimizing": Nothing }
 
 
 
@@ -1510,7 +1509,7 @@ newtype TrustedAdvisorCheckSummary = TrustedAdvisorCheckSummary
   { "checkId" :: (String)
   , "timestamp" :: (String)
   , "status" :: (String)
-  , "hasFlaggedResources" :: NullOrUndefined (Boolean)
+  , "hasFlaggedResources" :: Maybe (Boolean)
   , "resourcesSummary" :: (TrustedAdvisorResourcesSummary)
   , "categorySpecificSummary" :: (TrustedAdvisorCategorySpecificSummary)
   }
@@ -1522,12 +1521,12 @@ instance encodeTrustedAdvisorCheckSummary :: Encode TrustedAdvisorCheckSummary w
 
 -- | Constructs TrustedAdvisorCheckSummary from required parameters
 newTrustedAdvisorCheckSummary :: TrustedAdvisorCategorySpecificSummary -> String -> TrustedAdvisorResourcesSummary -> String -> String -> TrustedAdvisorCheckSummary
-newTrustedAdvisorCheckSummary _categorySpecificSummary _checkId _resourcesSummary _status _timestamp = TrustedAdvisorCheckSummary { "categorySpecificSummary": _categorySpecificSummary, "checkId": _checkId, "resourcesSummary": _resourcesSummary, "status": _status, "timestamp": _timestamp, "hasFlaggedResources": (NullOrUndefined Nothing) }
+newTrustedAdvisorCheckSummary _categorySpecificSummary _checkId _resourcesSummary _status _timestamp = TrustedAdvisorCheckSummary { "categorySpecificSummary": _categorySpecificSummary, "checkId": _checkId, "resourcesSummary": _resourcesSummary, "status": _status, "timestamp": _timestamp, "hasFlaggedResources": Nothing }
 
 -- | Constructs TrustedAdvisorCheckSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTrustedAdvisorCheckSummary' :: TrustedAdvisorCategorySpecificSummary -> String -> TrustedAdvisorResourcesSummary -> String -> String -> ( { "checkId" :: (String) , "timestamp" :: (String) , "status" :: (String) , "hasFlaggedResources" :: NullOrUndefined (Boolean) , "resourcesSummary" :: (TrustedAdvisorResourcesSummary) , "categorySpecificSummary" :: (TrustedAdvisorCategorySpecificSummary) } -> {"checkId" :: (String) , "timestamp" :: (String) , "status" :: (String) , "hasFlaggedResources" :: NullOrUndefined (Boolean) , "resourcesSummary" :: (TrustedAdvisorResourcesSummary) , "categorySpecificSummary" :: (TrustedAdvisorCategorySpecificSummary) } ) -> TrustedAdvisorCheckSummary
-newTrustedAdvisorCheckSummary' _categorySpecificSummary _checkId _resourcesSummary _status _timestamp customize = (TrustedAdvisorCheckSummary <<< customize) { "categorySpecificSummary": _categorySpecificSummary, "checkId": _checkId, "resourcesSummary": _resourcesSummary, "status": _status, "timestamp": _timestamp, "hasFlaggedResources": (NullOrUndefined Nothing) }
+newTrustedAdvisorCheckSummary' :: TrustedAdvisorCategorySpecificSummary -> String -> TrustedAdvisorResourcesSummary -> String -> String -> ( { "checkId" :: (String) , "timestamp" :: (String) , "status" :: (String) , "hasFlaggedResources" :: Maybe (Boolean) , "resourcesSummary" :: (TrustedAdvisorResourcesSummary) , "categorySpecificSummary" :: (TrustedAdvisorCategorySpecificSummary) } -> {"checkId" :: (String) , "timestamp" :: (String) , "status" :: (String) , "hasFlaggedResources" :: Maybe (Boolean) , "resourcesSummary" :: (TrustedAdvisorResourcesSummary) , "categorySpecificSummary" :: (TrustedAdvisorCategorySpecificSummary) } ) -> TrustedAdvisorCheckSummary
+newTrustedAdvisorCheckSummary' _categorySpecificSummary _checkId _resourcesSummary _status _timestamp customize = (TrustedAdvisorCheckSummary <<< customize) { "categorySpecificSummary": _categorySpecificSummary, "checkId": _checkId, "resourcesSummary": _resourcesSummary, "status": _status, "timestamp": _timestamp, "hasFlaggedResources": Nothing }
 
 
 
@@ -1565,9 +1564,9 @@ newTrustedAdvisorCostOptimizingSummary' _estimatedMonthlySavings _estimatedPerce
 -- | <p>Contains information about a resource identified by a Trusted Advisor check.</p>
 newtype TrustedAdvisorResourceDetail = TrustedAdvisorResourceDetail 
   { "status" :: (String)
-  , "region" :: NullOrUndefined (String)
+  , "region" :: Maybe (String)
   , "resourceId" :: (String)
-  , "isSuppressed" :: NullOrUndefined (Boolean)
+  , "isSuppressed" :: Maybe (Boolean)
   , "metadata" :: (StringList)
   }
 derive instance newtypeTrustedAdvisorResourceDetail :: Newtype TrustedAdvisorResourceDetail _
@@ -1578,12 +1577,12 @@ instance encodeTrustedAdvisorResourceDetail :: Encode TrustedAdvisorResourceDeta
 
 -- | Constructs TrustedAdvisorResourceDetail from required parameters
 newTrustedAdvisorResourceDetail :: StringList -> String -> String -> TrustedAdvisorResourceDetail
-newTrustedAdvisorResourceDetail _metadata _resourceId _status = TrustedAdvisorResourceDetail { "metadata": _metadata, "resourceId": _resourceId, "status": _status, "isSuppressed": (NullOrUndefined Nothing), "region": (NullOrUndefined Nothing) }
+newTrustedAdvisorResourceDetail _metadata _resourceId _status = TrustedAdvisorResourceDetail { "metadata": _metadata, "resourceId": _resourceId, "status": _status, "isSuppressed": Nothing, "region": Nothing }
 
 -- | Constructs TrustedAdvisorResourceDetail's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTrustedAdvisorResourceDetail' :: StringList -> String -> String -> ( { "status" :: (String) , "region" :: NullOrUndefined (String) , "resourceId" :: (String) , "isSuppressed" :: NullOrUndefined (Boolean) , "metadata" :: (StringList) } -> {"status" :: (String) , "region" :: NullOrUndefined (String) , "resourceId" :: (String) , "isSuppressed" :: NullOrUndefined (Boolean) , "metadata" :: (StringList) } ) -> TrustedAdvisorResourceDetail
-newTrustedAdvisorResourceDetail' _metadata _resourceId _status customize = (TrustedAdvisorResourceDetail <<< customize) { "metadata": _metadata, "resourceId": _resourceId, "status": _status, "isSuppressed": (NullOrUndefined Nothing), "region": (NullOrUndefined Nothing) }
+newTrustedAdvisorResourceDetail' :: StringList -> String -> String -> ( { "status" :: (String) , "region" :: Maybe (String) , "resourceId" :: (String) , "isSuppressed" :: Maybe (Boolean) , "metadata" :: (StringList) } -> {"status" :: (String) , "region" :: Maybe (String) , "resourceId" :: (String) , "isSuppressed" :: Maybe (Boolean) , "metadata" :: (StringList) } ) -> TrustedAdvisorResourceDetail
+newTrustedAdvisorResourceDetail' _metadata _resourceId _status customize = (TrustedAdvisorResourceDetail <<< customize) { "metadata": _metadata, "resourceId": _resourceId, "status": _status, "isSuppressed": Nothing, "region": Nothing }
 
 
 

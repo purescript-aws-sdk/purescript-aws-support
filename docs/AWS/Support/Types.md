@@ -10,7 +10,7 @@ options :: Options
 
 ``` purescript
 newtype AddAttachmentsToSetRequest
-  = AddAttachmentsToSetRequest { attachmentSetId :: NullOrUndefined (AttachmentSetId), attachments :: Attachments }
+  = AddAttachmentsToSetRequest { attachmentSetId :: Maybe (AttachmentSetId), attachments :: Attachments }
 ```
 
 <p/>
@@ -35,7 +35,7 @@ Constructs AddAttachmentsToSetRequest from required parameters
 #### `newAddAttachmentsToSetRequest'`
 
 ``` purescript
-newAddAttachmentsToSetRequest' :: Attachments -> ({ attachmentSetId :: NullOrUndefined (AttachmentSetId), attachments :: Attachments } -> { attachmentSetId :: NullOrUndefined (AttachmentSetId), attachments :: Attachments }) -> AddAttachmentsToSetRequest
+newAddAttachmentsToSetRequest' :: Attachments -> ({ attachmentSetId :: Maybe (AttachmentSetId), attachments :: Attachments } -> { attachmentSetId :: Maybe (AttachmentSetId), attachments :: Attachments }) -> AddAttachmentsToSetRequest
 ```
 
 Constructs AddAttachmentsToSetRequest's fields from required parameters
@@ -44,7 +44,7 @@ Constructs AddAttachmentsToSetRequest's fields from required parameters
 
 ``` purescript
 newtype AddAttachmentsToSetResponse
-  = AddAttachmentsToSetResponse { attachmentSetId :: NullOrUndefined (AttachmentSetId), expiryTime :: NullOrUndefined (ExpiryTime) }
+  = AddAttachmentsToSetResponse { attachmentSetId :: Maybe (AttachmentSetId), expiryTime :: Maybe (ExpiryTime) }
 ```
 
 <p>The ID and expiry time of the attachment set returned by the <a>AddAttachmentsToSet</a> operation.</p>
@@ -69,7 +69,7 @@ Constructs AddAttachmentsToSetResponse from required parameters
 #### `newAddAttachmentsToSetResponse'`
 
 ``` purescript
-newAddAttachmentsToSetResponse' :: ({ attachmentSetId :: NullOrUndefined (AttachmentSetId), expiryTime :: NullOrUndefined (ExpiryTime) } -> { attachmentSetId :: NullOrUndefined (AttachmentSetId), expiryTime :: NullOrUndefined (ExpiryTime) }) -> AddAttachmentsToSetResponse
+newAddAttachmentsToSetResponse' :: ({ attachmentSetId :: Maybe (AttachmentSetId), expiryTime :: Maybe (ExpiryTime) } -> { attachmentSetId :: Maybe (AttachmentSetId), expiryTime :: Maybe (ExpiryTime) }) -> AddAttachmentsToSetResponse
 ```
 
 Constructs AddAttachmentsToSetResponse's fields from required parameters
@@ -78,7 +78,7 @@ Constructs AddAttachmentsToSetResponse's fields from required parameters
 
 ``` purescript
 newtype AddCommunicationToCaseRequest
-  = AddCommunicationToCaseRequest { caseId :: NullOrUndefined (CaseId), communicationBody :: CommunicationBody, ccEmailAddresses :: NullOrUndefined (CcEmailAddressList), attachmentSetId :: NullOrUndefined (AttachmentSetId) }
+  = AddCommunicationToCaseRequest { caseId :: Maybe (CaseId), communicationBody :: CommunicationBody, ccEmailAddresses :: Maybe (CcEmailAddressList), attachmentSetId :: Maybe (AttachmentSetId) }
 ```
 
 <p>To be written.</p>
@@ -103,7 +103,7 @@ Constructs AddCommunicationToCaseRequest from required parameters
 #### `newAddCommunicationToCaseRequest'`
 
 ``` purescript
-newAddCommunicationToCaseRequest' :: CommunicationBody -> ({ caseId :: NullOrUndefined (CaseId), communicationBody :: CommunicationBody, ccEmailAddresses :: NullOrUndefined (CcEmailAddressList), attachmentSetId :: NullOrUndefined (AttachmentSetId) } -> { caseId :: NullOrUndefined (CaseId), communicationBody :: CommunicationBody, ccEmailAddresses :: NullOrUndefined (CcEmailAddressList), attachmentSetId :: NullOrUndefined (AttachmentSetId) }) -> AddCommunicationToCaseRequest
+newAddCommunicationToCaseRequest' :: CommunicationBody -> ({ caseId :: Maybe (CaseId), communicationBody :: CommunicationBody, ccEmailAddresses :: Maybe (CcEmailAddressList), attachmentSetId :: Maybe (AttachmentSetId) } -> { caseId :: Maybe (CaseId), communicationBody :: CommunicationBody, ccEmailAddresses :: Maybe (CcEmailAddressList), attachmentSetId :: Maybe (AttachmentSetId) }) -> AddCommunicationToCaseRequest
 ```
 
 Constructs AddCommunicationToCaseRequest's fields from required parameters
@@ -112,7 +112,7 @@ Constructs AddCommunicationToCaseRequest's fields from required parameters
 
 ``` purescript
 newtype AddCommunicationToCaseResponse
-  = AddCommunicationToCaseResponse { result :: NullOrUndefined (Result) }
+  = AddCommunicationToCaseResponse { result :: Maybe (Result) }
 ```
 
 <p>The result of the <a>AddCommunicationToCase</a> operation.</p>
@@ -137,7 +137,7 @@ Constructs AddCommunicationToCaseResponse from required parameters
 #### `newAddCommunicationToCaseResponse'`
 
 ``` purescript
-newAddCommunicationToCaseResponse' :: ({ result :: NullOrUndefined (Result) } -> { result :: NullOrUndefined (Result) }) -> AddCommunicationToCaseResponse
+newAddCommunicationToCaseResponse' :: ({ result :: Maybe (Result) } -> { result :: Maybe (Result) }) -> AddCommunicationToCaseResponse
 ```
 
 Constructs AddCommunicationToCaseResponse's fields from required parameters
@@ -162,7 +162,7 @@ Encode AfterTime
 
 ``` purescript
 newtype Attachment
-  = Attachment { fileName :: NullOrUndefined (FileName), "data" :: NullOrUndefined (Data) }
+  = Attachment { fileName :: Maybe (FileName), "data" :: Maybe (Data) }
 ```
 
 <p>An attachment to a case communication. The attachment consists of the file name and the content of the file.</p>
@@ -187,7 +187,7 @@ Constructs Attachment from required parameters
 #### `newAttachment'`
 
 ``` purescript
-newAttachment' :: ({ fileName :: NullOrUndefined (FileName), "data" :: NullOrUndefined (Data) } -> { fileName :: NullOrUndefined (FileName), "data" :: NullOrUndefined (Data) }) -> Attachment
+newAttachment' :: ({ fileName :: Maybe (FileName), "data" :: Maybe (Data) } -> { fileName :: Maybe (FileName), "data" :: Maybe (Data) }) -> Attachment
 ```
 
 Constructs Attachment's fields from required parameters
@@ -196,7 +196,7 @@ Constructs Attachment's fields from required parameters
 
 ``` purescript
 newtype AttachmentDetails
-  = AttachmentDetails { attachmentId :: NullOrUndefined (AttachmentId), fileName :: NullOrUndefined (FileName) }
+  = AttachmentDetails { attachmentId :: Maybe (AttachmentId), fileName :: Maybe (FileName) }
 ```
 
 <p>The file name and ID of an attachment to a case communication. You can use the ID to retrieve the attachment with the <a>DescribeAttachment</a> operation.</p>
@@ -221,7 +221,7 @@ Constructs AttachmentDetails from required parameters
 #### `newAttachmentDetails'`
 
 ``` purescript
-newAttachmentDetails' :: ({ attachmentId :: NullOrUndefined (AttachmentId), fileName :: NullOrUndefined (FileName) } -> { attachmentId :: NullOrUndefined (AttachmentId), fileName :: NullOrUndefined (FileName) }) -> AttachmentDetails
+newAttachmentDetails' :: ({ attachmentId :: Maybe (AttachmentId), fileName :: Maybe (FileName) } -> { attachmentId :: Maybe (AttachmentId), fileName :: Maybe (FileName) }) -> AttachmentDetails
 ```
 
 Constructs AttachmentDetails's fields from required parameters
@@ -246,7 +246,7 @@ Encode AttachmentId
 
 ``` purescript
 newtype AttachmentIdNotFound
-  = AttachmentIdNotFound { message :: NullOrUndefined (ErrorMessage) }
+  = AttachmentIdNotFound { message :: Maybe (ErrorMessage) }
 ```
 
 <p>An attachment with the specified ID could not be found.</p>
@@ -271,7 +271,7 @@ Constructs AttachmentIdNotFound from required parameters
 #### `newAttachmentIdNotFound'`
 
 ``` purescript
-newAttachmentIdNotFound' :: ({ message :: NullOrUndefined (ErrorMessage) } -> { message :: NullOrUndefined (ErrorMessage) }) -> AttachmentIdNotFound
+newAttachmentIdNotFound' :: ({ message :: Maybe (ErrorMessage) } -> { message :: Maybe (ErrorMessage) }) -> AttachmentIdNotFound
 ```
 
 Constructs AttachmentIdNotFound's fields from required parameters
@@ -280,7 +280,7 @@ Constructs AttachmentIdNotFound's fields from required parameters
 
 ``` purescript
 newtype AttachmentLimitExceeded
-  = AttachmentLimitExceeded { message :: NullOrUndefined (ErrorMessage) }
+  = AttachmentLimitExceeded { message :: Maybe (ErrorMessage) }
 ```
 
 <p>The limit for the number of attachment sets created in a short period of time has been exceeded.</p>
@@ -305,7 +305,7 @@ Constructs AttachmentLimitExceeded from required parameters
 #### `newAttachmentLimitExceeded'`
 
 ``` purescript
-newAttachmentLimitExceeded' :: ({ message :: NullOrUndefined (ErrorMessage) } -> { message :: NullOrUndefined (ErrorMessage) }) -> AttachmentLimitExceeded
+newAttachmentLimitExceeded' :: ({ message :: Maybe (ErrorMessage) } -> { message :: Maybe (ErrorMessage) }) -> AttachmentLimitExceeded
 ```
 
 Constructs AttachmentLimitExceeded's fields from required parameters
@@ -330,7 +330,7 @@ Encode AttachmentSet
 
 ``` purescript
 newtype AttachmentSetExpired
-  = AttachmentSetExpired { message :: NullOrUndefined (ErrorMessage) }
+  = AttachmentSetExpired { message :: Maybe (ErrorMessage) }
 ```
 
 <p>The expiration time of the attachment set has passed. The set expires 1 hour after it is created.</p>
@@ -355,7 +355,7 @@ Constructs AttachmentSetExpired from required parameters
 #### `newAttachmentSetExpired'`
 
 ``` purescript
-newAttachmentSetExpired' :: ({ message :: NullOrUndefined (ErrorMessage) } -> { message :: NullOrUndefined (ErrorMessage) }) -> AttachmentSetExpired
+newAttachmentSetExpired' :: ({ message :: Maybe (ErrorMessage) } -> { message :: Maybe (ErrorMessage) }) -> AttachmentSetExpired
 ```
 
 Constructs AttachmentSetExpired's fields from required parameters
@@ -380,7 +380,7 @@ Encode AttachmentSetId
 
 ``` purescript
 newtype AttachmentSetIdNotFound
-  = AttachmentSetIdNotFound { message :: NullOrUndefined (ErrorMessage) }
+  = AttachmentSetIdNotFound { message :: Maybe (ErrorMessage) }
 ```
 
 <p>An attachment set with the specified ID could not be found.</p>
@@ -405,7 +405,7 @@ Constructs AttachmentSetIdNotFound from required parameters
 #### `newAttachmentSetIdNotFound'`
 
 ``` purescript
-newAttachmentSetIdNotFound' :: ({ message :: NullOrUndefined (ErrorMessage) } -> { message :: NullOrUndefined (ErrorMessage) }) -> AttachmentSetIdNotFound
+newAttachmentSetIdNotFound' :: ({ message :: Maybe (ErrorMessage) } -> { message :: Maybe (ErrorMessage) }) -> AttachmentSetIdNotFound
 ```
 
 Constructs AttachmentSetIdNotFound's fields from required parameters
@@ -414,7 +414,7 @@ Constructs AttachmentSetIdNotFound's fields from required parameters
 
 ``` purescript
 newtype AttachmentSetSizeLimitExceeded
-  = AttachmentSetSizeLimitExceeded { message :: NullOrUndefined (ErrorMessage) }
+  = AttachmentSetSizeLimitExceeded { message :: Maybe (ErrorMessage) }
 ```
 
 <p>A limit for the size of an attachment set has been exceeded. The limits are 3 attachments and 5 MB per attachment.</p>
@@ -439,7 +439,7 @@ Constructs AttachmentSetSizeLimitExceeded from required parameters
 #### `newAttachmentSetSizeLimitExceeded'`
 
 ``` purescript
-newAttachmentSetSizeLimitExceeded' :: ({ message :: NullOrUndefined (ErrorMessage) } -> { message :: NullOrUndefined (ErrorMessage) }) -> AttachmentSetSizeLimitExceeded
+newAttachmentSetSizeLimitExceeded' :: ({ message :: Maybe (ErrorMessage) } -> { message :: Maybe (ErrorMessage) }) -> AttachmentSetSizeLimitExceeded
 ```
 
 Constructs AttachmentSetSizeLimitExceeded's fields from required parameters
@@ -480,7 +480,7 @@ Encode BeforeTime
 
 ``` purescript
 newtype CaseCreationLimitExceeded
-  = CaseCreationLimitExceeded { message :: NullOrUndefined (ErrorMessage) }
+  = CaseCreationLimitExceeded { message :: Maybe (ErrorMessage) }
 ```
 
 <p>The case creation limit for the account has been exceeded.</p>
@@ -505,7 +505,7 @@ Constructs CaseCreationLimitExceeded from required parameters
 #### `newCaseCreationLimitExceeded'`
 
 ``` purescript
-newCaseCreationLimitExceeded' :: ({ message :: NullOrUndefined (ErrorMessage) } -> { message :: NullOrUndefined (ErrorMessage) }) -> CaseCreationLimitExceeded
+newCaseCreationLimitExceeded' :: ({ message :: Maybe (ErrorMessage) } -> { message :: Maybe (ErrorMessage) }) -> CaseCreationLimitExceeded
 ```
 
 Constructs CaseCreationLimitExceeded's fields from required parameters
@@ -514,7 +514,7 @@ Constructs CaseCreationLimitExceeded's fields from required parameters
 
 ``` purescript
 newtype CaseDetails
-  = CaseDetails { caseId :: NullOrUndefined (CaseId), displayId :: NullOrUndefined (DisplayId), subject :: NullOrUndefined (Subject), status :: NullOrUndefined (Status), serviceCode :: NullOrUndefined (ServiceCode), categoryCode :: NullOrUndefined (CategoryCode), severityCode :: NullOrUndefined (SeverityCode), submittedBy :: NullOrUndefined (SubmittedBy), timeCreated :: NullOrUndefined (TimeCreated), recentCommunications :: NullOrUndefined (RecentCaseCommunications), ccEmailAddresses :: NullOrUndefined (CcEmailAddressList), language :: NullOrUndefined (Language) }
+  = CaseDetails { caseId :: Maybe (CaseId), displayId :: Maybe (DisplayId), subject :: Maybe (Subject), status :: Maybe (Status), serviceCode :: Maybe (ServiceCode), categoryCode :: Maybe (CategoryCode), severityCode :: Maybe (SeverityCode), submittedBy :: Maybe (SubmittedBy), timeCreated :: Maybe (TimeCreated), recentCommunications :: Maybe (RecentCaseCommunications), ccEmailAddresses :: Maybe (CcEmailAddressList), language :: Maybe (Language) }
 ```
 
 <p>A JSON-formatted object that contains the metadata for a support case. It is contained the response from a <a>DescribeCases</a> request. <b>CaseDetails</b> contains the following fields:</p> <ul> <li> <p> <b>caseId.</b> The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.</p> </li> <li> <p> <b>categoryCode.</b> The category of problem for the AWS Support case. Corresponds to the CategoryCode values returned by a call to <a>DescribeServices</a>.</p> </li> <li> <p> <b>displayId.</b> The identifier for the case on pages in the AWS Support Center.</p> </li> <li> <p> <b>language.</b> The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p> </li> <li> <p> <b>recentCommunications.</b> One or more <a>Communication</a> objects. Fields of these objects are <code>attachments</code>, <code>body</code>, <code>caseId</code>, <code>submittedBy</code>, and <code>timeCreated</code>.</p> </li> <li> <p> <b>nextToken.</b> A resumption point for pagination.</p> </li> <li> <p> <b>serviceCode.</b> The identifier for the AWS service that corresponds to the service code defined in the call to <a>DescribeServices</a>.</p> </li> <li> <p> <b>severityCode. </b>The severity code assigned to the case. Contains one of the values returned by the call to <a>DescribeSeverityLevels</a>.</p> </li> <li> <p> <b>status.</b> The status of the case in the AWS Support Center.</p> </li> <li> <p> <b>subject.</b> The subject line of the case.</p> </li> <li> <p> <b>submittedBy.</b> The email address of the account that submitted the case.</p> </li> <li> <p> <b>timeCreated.</b> The time the case was created, in ISO-8601 format.</p> </li> </ul>
@@ -539,7 +539,7 @@ Constructs CaseDetails from required parameters
 #### `newCaseDetails'`
 
 ``` purescript
-newCaseDetails' :: ({ caseId :: NullOrUndefined (CaseId), displayId :: NullOrUndefined (DisplayId), subject :: NullOrUndefined (Subject), status :: NullOrUndefined (Status), serviceCode :: NullOrUndefined (ServiceCode), categoryCode :: NullOrUndefined (CategoryCode), severityCode :: NullOrUndefined (SeverityCode), submittedBy :: NullOrUndefined (SubmittedBy), timeCreated :: NullOrUndefined (TimeCreated), recentCommunications :: NullOrUndefined (RecentCaseCommunications), ccEmailAddresses :: NullOrUndefined (CcEmailAddressList), language :: NullOrUndefined (Language) } -> { caseId :: NullOrUndefined (CaseId), displayId :: NullOrUndefined (DisplayId), subject :: NullOrUndefined (Subject), status :: NullOrUndefined (Status), serviceCode :: NullOrUndefined (ServiceCode), categoryCode :: NullOrUndefined (CategoryCode), severityCode :: NullOrUndefined (SeverityCode), submittedBy :: NullOrUndefined (SubmittedBy), timeCreated :: NullOrUndefined (TimeCreated), recentCommunications :: NullOrUndefined (RecentCaseCommunications), ccEmailAddresses :: NullOrUndefined (CcEmailAddressList), language :: NullOrUndefined (Language) }) -> CaseDetails
+newCaseDetails' :: ({ caseId :: Maybe (CaseId), displayId :: Maybe (DisplayId), subject :: Maybe (Subject), status :: Maybe (Status), serviceCode :: Maybe (ServiceCode), categoryCode :: Maybe (CategoryCode), severityCode :: Maybe (SeverityCode), submittedBy :: Maybe (SubmittedBy), timeCreated :: Maybe (TimeCreated), recentCommunications :: Maybe (RecentCaseCommunications), ccEmailAddresses :: Maybe (CcEmailAddressList), language :: Maybe (Language) } -> { caseId :: Maybe (CaseId), displayId :: Maybe (DisplayId), subject :: Maybe (Subject), status :: Maybe (Status), serviceCode :: Maybe (ServiceCode), categoryCode :: Maybe (CategoryCode), severityCode :: Maybe (SeverityCode), submittedBy :: Maybe (SubmittedBy), timeCreated :: Maybe (TimeCreated), recentCommunications :: Maybe (RecentCaseCommunications), ccEmailAddresses :: Maybe (CcEmailAddressList), language :: Maybe (Language) }) -> CaseDetails
 ```
 
 Constructs CaseDetails's fields from required parameters
@@ -580,7 +580,7 @@ Encode CaseIdList
 
 ``` purescript
 newtype CaseIdNotFound
-  = CaseIdNotFound { message :: NullOrUndefined (ErrorMessage) }
+  = CaseIdNotFound { message :: Maybe (ErrorMessage) }
 ```
 
 <p>The requested <code>caseId</code> could not be located.</p>
@@ -605,7 +605,7 @@ Constructs CaseIdNotFound from required parameters
 #### `newCaseIdNotFound'`
 
 ``` purescript
-newCaseIdNotFound' :: ({ message :: NullOrUndefined (ErrorMessage) } -> { message :: NullOrUndefined (ErrorMessage) }) -> CaseIdNotFound
+newCaseIdNotFound' :: ({ message :: Maybe (ErrorMessage) } -> { message :: Maybe (ErrorMessage) }) -> CaseIdNotFound
 ```
 
 Constructs CaseIdNotFound's fields from required parameters
@@ -646,7 +646,7 @@ Encode CaseStatus
 
 ``` purescript
 newtype Category
-  = Category { code :: NullOrUndefined (CategoryCode), name :: NullOrUndefined (CategoryName) }
+  = Category { code :: Maybe (CategoryCode), name :: Maybe (CategoryName) }
 ```
 
 <p>A JSON-formatted name/value pair that represents the category name and category code of the problem, selected from the <a>DescribeServices</a> response for each AWS service.</p>
@@ -671,7 +671,7 @@ Constructs Category from required parameters
 #### `newCategory'`
 
 ``` purescript
-newCategory' :: ({ code :: NullOrUndefined (CategoryCode), name :: NullOrUndefined (CategoryName) } -> { code :: NullOrUndefined (CategoryCode), name :: NullOrUndefined (CategoryName) }) -> Category
+newCategory' :: ({ code :: Maybe (CategoryCode), name :: Maybe (CategoryName) } -> { code :: Maybe (CategoryCode), name :: Maybe (CategoryName) }) -> Category
 ```
 
 Constructs Category's fields from required parameters
@@ -760,7 +760,7 @@ Encode CcEmailAddressList
 
 ``` purescript
 newtype Communication
-  = Communication { caseId :: NullOrUndefined (CaseId), body :: NullOrUndefined (CommunicationBody), submittedBy :: NullOrUndefined (SubmittedBy), timeCreated :: NullOrUndefined (TimeCreated), attachmentSet :: NullOrUndefined (AttachmentSet) }
+  = Communication { caseId :: Maybe (CaseId), body :: Maybe (CommunicationBody), submittedBy :: Maybe (SubmittedBy), timeCreated :: Maybe (TimeCreated), attachmentSet :: Maybe (AttachmentSet) }
 ```
 
 <p>A communication associated with an AWS Support case. The communication consists of the case ID, the message body, attachment information, the account email address, and the date and time of the communication.</p>
@@ -785,7 +785,7 @@ Constructs Communication from required parameters
 #### `newCommunication'`
 
 ``` purescript
-newCommunication' :: ({ caseId :: NullOrUndefined (CaseId), body :: NullOrUndefined (CommunicationBody), submittedBy :: NullOrUndefined (SubmittedBy), timeCreated :: NullOrUndefined (TimeCreated), attachmentSet :: NullOrUndefined (AttachmentSet) } -> { caseId :: NullOrUndefined (CaseId), body :: NullOrUndefined (CommunicationBody), submittedBy :: NullOrUndefined (SubmittedBy), timeCreated :: NullOrUndefined (TimeCreated), attachmentSet :: NullOrUndefined (AttachmentSet) }) -> Communication
+newCommunication' :: ({ caseId :: Maybe (CaseId), body :: Maybe (CommunicationBody), submittedBy :: Maybe (SubmittedBy), timeCreated :: Maybe (TimeCreated), attachmentSet :: Maybe (AttachmentSet) } -> { caseId :: Maybe (CaseId), body :: Maybe (CommunicationBody), submittedBy :: Maybe (SubmittedBy), timeCreated :: Maybe (TimeCreated), attachmentSet :: Maybe (AttachmentSet) }) -> Communication
 ```
 
 Constructs Communication's fields from required parameters
@@ -826,7 +826,7 @@ Encode CommunicationList
 
 ``` purescript
 newtype CreateCaseRequest
-  = CreateCaseRequest { subject :: Subject, serviceCode :: NullOrUndefined (ServiceCode), severityCode :: NullOrUndefined (SeverityCode), categoryCode :: NullOrUndefined (CategoryCode), communicationBody :: CommunicationBody, ccEmailAddresses :: NullOrUndefined (CcEmailAddressList), language :: NullOrUndefined (Language), issueType :: NullOrUndefined (IssueType), attachmentSetId :: NullOrUndefined (AttachmentSetId) }
+  = CreateCaseRequest { subject :: Subject, serviceCode :: Maybe (ServiceCode), severityCode :: Maybe (SeverityCode), categoryCode :: Maybe (CategoryCode), communicationBody :: CommunicationBody, ccEmailAddresses :: Maybe (CcEmailAddressList), language :: Maybe (Language), issueType :: Maybe (IssueType), attachmentSetId :: Maybe (AttachmentSetId) }
 ```
 
 <p/>
@@ -851,7 +851,7 @@ Constructs CreateCaseRequest from required parameters
 #### `newCreateCaseRequest'`
 
 ``` purescript
-newCreateCaseRequest' :: CommunicationBody -> Subject -> ({ subject :: Subject, serviceCode :: NullOrUndefined (ServiceCode), severityCode :: NullOrUndefined (SeverityCode), categoryCode :: NullOrUndefined (CategoryCode), communicationBody :: CommunicationBody, ccEmailAddresses :: NullOrUndefined (CcEmailAddressList), language :: NullOrUndefined (Language), issueType :: NullOrUndefined (IssueType), attachmentSetId :: NullOrUndefined (AttachmentSetId) } -> { subject :: Subject, serviceCode :: NullOrUndefined (ServiceCode), severityCode :: NullOrUndefined (SeverityCode), categoryCode :: NullOrUndefined (CategoryCode), communicationBody :: CommunicationBody, ccEmailAddresses :: NullOrUndefined (CcEmailAddressList), language :: NullOrUndefined (Language), issueType :: NullOrUndefined (IssueType), attachmentSetId :: NullOrUndefined (AttachmentSetId) }) -> CreateCaseRequest
+newCreateCaseRequest' :: CommunicationBody -> Subject -> ({ subject :: Subject, serviceCode :: Maybe (ServiceCode), severityCode :: Maybe (SeverityCode), categoryCode :: Maybe (CategoryCode), communicationBody :: CommunicationBody, ccEmailAddresses :: Maybe (CcEmailAddressList), language :: Maybe (Language), issueType :: Maybe (IssueType), attachmentSetId :: Maybe (AttachmentSetId) } -> { subject :: Subject, serviceCode :: Maybe (ServiceCode), severityCode :: Maybe (SeverityCode), categoryCode :: Maybe (CategoryCode), communicationBody :: CommunicationBody, ccEmailAddresses :: Maybe (CcEmailAddressList), language :: Maybe (Language), issueType :: Maybe (IssueType), attachmentSetId :: Maybe (AttachmentSetId) }) -> CreateCaseRequest
 ```
 
 Constructs CreateCaseRequest's fields from required parameters
@@ -860,7 +860,7 @@ Constructs CreateCaseRequest's fields from required parameters
 
 ``` purescript
 newtype CreateCaseResponse
-  = CreateCaseResponse { caseId :: NullOrUndefined (CaseId) }
+  = CreateCaseResponse { caseId :: Maybe (CaseId) }
 ```
 
 <p>The AWS Support case ID returned by a successful completion of the <a>CreateCase</a> operation. </p>
@@ -885,7 +885,7 @@ Constructs CreateCaseResponse from required parameters
 #### `newCreateCaseResponse'`
 
 ``` purescript
-newCreateCaseResponse' :: ({ caseId :: NullOrUndefined (CaseId) } -> { caseId :: NullOrUndefined (CaseId) }) -> CreateCaseResponse
+newCreateCaseResponse' :: ({ caseId :: Maybe (CaseId) } -> { caseId :: Maybe (CaseId) }) -> CreateCaseResponse
 ```
 
 Constructs CreateCaseResponse's fields from required parameters
@@ -910,7 +910,7 @@ Encode Data
 
 ``` purescript
 newtype DescribeAttachmentLimitExceeded
-  = DescribeAttachmentLimitExceeded { message :: NullOrUndefined (ErrorMessage) }
+  = DescribeAttachmentLimitExceeded { message :: Maybe (ErrorMessage) }
 ```
 
 <p>The limit for the number of <a>DescribeAttachment</a> requests in a short period of time has been exceeded.</p>
@@ -935,7 +935,7 @@ Constructs DescribeAttachmentLimitExceeded from required parameters
 #### `newDescribeAttachmentLimitExceeded'`
 
 ``` purescript
-newDescribeAttachmentLimitExceeded' :: ({ message :: NullOrUndefined (ErrorMessage) } -> { message :: NullOrUndefined (ErrorMessage) }) -> DescribeAttachmentLimitExceeded
+newDescribeAttachmentLimitExceeded' :: ({ message :: Maybe (ErrorMessage) } -> { message :: Maybe (ErrorMessage) }) -> DescribeAttachmentLimitExceeded
 ```
 
 Constructs DescribeAttachmentLimitExceeded's fields from required parameters
@@ -976,7 +976,7 @@ Constructs DescribeAttachmentRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeAttachmentResponse
-  = DescribeAttachmentResponse { attachment :: NullOrUndefined (Attachment) }
+  = DescribeAttachmentResponse { attachment :: Maybe (Attachment) }
 ```
 
 <p>The content and file name of the attachment returned by the <a>DescribeAttachment</a> operation.</p>
@@ -1001,7 +1001,7 @@ Constructs DescribeAttachmentResponse from required parameters
 #### `newDescribeAttachmentResponse'`
 
 ``` purescript
-newDescribeAttachmentResponse' :: ({ attachment :: NullOrUndefined (Attachment) } -> { attachment :: NullOrUndefined (Attachment) }) -> DescribeAttachmentResponse
+newDescribeAttachmentResponse' :: ({ attachment :: Maybe (Attachment) } -> { attachment :: Maybe (Attachment) }) -> DescribeAttachmentResponse
 ```
 
 Constructs DescribeAttachmentResponse's fields from required parameters
@@ -1010,7 +1010,7 @@ Constructs DescribeAttachmentResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeCasesRequest
-  = DescribeCasesRequest { caseIdList :: NullOrUndefined (CaseIdList), displayId :: NullOrUndefined (DisplayId), afterTime :: NullOrUndefined (AfterTime), beforeTime :: NullOrUndefined (BeforeTime), includeResolvedCases :: NullOrUndefined (IncludeResolvedCases), nextToken :: NullOrUndefined (NextToken), maxResults :: NullOrUndefined (MaxResults), language :: NullOrUndefined (Language), includeCommunications :: NullOrUndefined (IncludeCommunications) }
+  = DescribeCasesRequest { caseIdList :: Maybe (CaseIdList), displayId :: Maybe (DisplayId), afterTime :: Maybe (AfterTime), beforeTime :: Maybe (BeforeTime), includeResolvedCases :: Maybe (IncludeResolvedCases), nextToken :: Maybe (NextToken), maxResults :: Maybe (MaxResults), language :: Maybe (Language), includeCommunications :: Maybe (IncludeCommunications) }
 ```
 
 <p/>
@@ -1035,7 +1035,7 @@ Constructs DescribeCasesRequest from required parameters
 #### `newDescribeCasesRequest'`
 
 ``` purescript
-newDescribeCasesRequest' :: ({ caseIdList :: NullOrUndefined (CaseIdList), displayId :: NullOrUndefined (DisplayId), afterTime :: NullOrUndefined (AfterTime), beforeTime :: NullOrUndefined (BeforeTime), includeResolvedCases :: NullOrUndefined (IncludeResolvedCases), nextToken :: NullOrUndefined (NextToken), maxResults :: NullOrUndefined (MaxResults), language :: NullOrUndefined (Language), includeCommunications :: NullOrUndefined (IncludeCommunications) } -> { caseIdList :: NullOrUndefined (CaseIdList), displayId :: NullOrUndefined (DisplayId), afterTime :: NullOrUndefined (AfterTime), beforeTime :: NullOrUndefined (BeforeTime), includeResolvedCases :: NullOrUndefined (IncludeResolvedCases), nextToken :: NullOrUndefined (NextToken), maxResults :: NullOrUndefined (MaxResults), language :: NullOrUndefined (Language), includeCommunications :: NullOrUndefined (IncludeCommunications) }) -> DescribeCasesRequest
+newDescribeCasesRequest' :: ({ caseIdList :: Maybe (CaseIdList), displayId :: Maybe (DisplayId), afterTime :: Maybe (AfterTime), beforeTime :: Maybe (BeforeTime), includeResolvedCases :: Maybe (IncludeResolvedCases), nextToken :: Maybe (NextToken), maxResults :: Maybe (MaxResults), language :: Maybe (Language), includeCommunications :: Maybe (IncludeCommunications) } -> { caseIdList :: Maybe (CaseIdList), displayId :: Maybe (DisplayId), afterTime :: Maybe (AfterTime), beforeTime :: Maybe (BeforeTime), includeResolvedCases :: Maybe (IncludeResolvedCases), nextToken :: Maybe (NextToken), maxResults :: Maybe (MaxResults), language :: Maybe (Language), includeCommunications :: Maybe (IncludeCommunications) }) -> DescribeCasesRequest
 ```
 
 Constructs DescribeCasesRequest's fields from required parameters
@@ -1044,7 +1044,7 @@ Constructs DescribeCasesRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeCasesResponse
-  = DescribeCasesResponse { cases :: NullOrUndefined (CaseList), nextToken :: NullOrUndefined (NextToken) }
+  = DescribeCasesResponse { cases :: Maybe (CaseList), nextToken :: Maybe (NextToken) }
 ```
 
 <p>Returns an array of <a>CaseDetails</a> objects and a <code>nextToken</code> that defines a point for pagination in the result set.</p>
@@ -1069,7 +1069,7 @@ Constructs DescribeCasesResponse from required parameters
 #### `newDescribeCasesResponse'`
 
 ``` purescript
-newDescribeCasesResponse' :: ({ cases :: NullOrUndefined (CaseList), nextToken :: NullOrUndefined (NextToken) } -> { cases :: NullOrUndefined (CaseList), nextToken :: NullOrUndefined (NextToken) }) -> DescribeCasesResponse
+newDescribeCasesResponse' :: ({ cases :: Maybe (CaseList), nextToken :: Maybe (NextToken) } -> { cases :: Maybe (CaseList), nextToken :: Maybe (NextToken) }) -> DescribeCasesResponse
 ```
 
 Constructs DescribeCasesResponse's fields from required parameters
@@ -1078,7 +1078,7 @@ Constructs DescribeCasesResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeCommunicationsRequest
-  = DescribeCommunicationsRequest { caseId :: CaseId, beforeTime :: NullOrUndefined (BeforeTime), afterTime :: NullOrUndefined (AfterTime), nextToken :: NullOrUndefined (NextToken), maxResults :: NullOrUndefined (MaxResults) }
+  = DescribeCommunicationsRequest { caseId :: CaseId, beforeTime :: Maybe (BeforeTime), afterTime :: Maybe (AfterTime), nextToken :: Maybe (NextToken), maxResults :: Maybe (MaxResults) }
 ```
 
 <p/>
@@ -1103,7 +1103,7 @@ Constructs DescribeCommunicationsRequest from required parameters
 #### `newDescribeCommunicationsRequest'`
 
 ``` purescript
-newDescribeCommunicationsRequest' :: CaseId -> ({ caseId :: CaseId, beforeTime :: NullOrUndefined (BeforeTime), afterTime :: NullOrUndefined (AfterTime), nextToken :: NullOrUndefined (NextToken), maxResults :: NullOrUndefined (MaxResults) } -> { caseId :: CaseId, beforeTime :: NullOrUndefined (BeforeTime), afterTime :: NullOrUndefined (AfterTime), nextToken :: NullOrUndefined (NextToken), maxResults :: NullOrUndefined (MaxResults) }) -> DescribeCommunicationsRequest
+newDescribeCommunicationsRequest' :: CaseId -> ({ caseId :: CaseId, beforeTime :: Maybe (BeforeTime), afterTime :: Maybe (AfterTime), nextToken :: Maybe (NextToken), maxResults :: Maybe (MaxResults) } -> { caseId :: CaseId, beforeTime :: Maybe (BeforeTime), afterTime :: Maybe (AfterTime), nextToken :: Maybe (NextToken), maxResults :: Maybe (MaxResults) }) -> DescribeCommunicationsRequest
 ```
 
 Constructs DescribeCommunicationsRequest's fields from required parameters
@@ -1112,7 +1112,7 @@ Constructs DescribeCommunicationsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeCommunicationsResponse
-  = DescribeCommunicationsResponse { communications :: NullOrUndefined (CommunicationList), nextToken :: NullOrUndefined (NextToken) }
+  = DescribeCommunicationsResponse { communications :: Maybe (CommunicationList), nextToken :: Maybe (NextToken) }
 ```
 
 <p>The communications returned by the <a>DescribeCommunications</a> operation.</p>
@@ -1137,7 +1137,7 @@ Constructs DescribeCommunicationsResponse from required parameters
 #### `newDescribeCommunicationsResponse'`
 
 ``` purescript
-newDescribeCommunicationsResponse' :: ({ communications :: NullOrUndefined (CommunicationList), nextToken :: NullOrUndefined (NextToken) } -> { communications :: NullOrUndefined (CommunicationList), nextToken :: NullOrUndefined (NextToken) }) -> DescribeCommunicationsResponse
+newDescribeCommunicationsResponse' :: ({ communications :: Maybe (CommunicationList), nextToken :: Maybe (NextToken) } -> { communications :: Maybe (CommunicationList), nextToken :: Maybe (NextToken) }) -> DescribeCommunicationsResponse
 ```
 
 Constructs DescribeCommunicationsResponse's fields from required parameters
@@ -1146,7 +1146,7 @@ Constructs DescribeCommunicationsResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeServicesRequest
-  = DescribeServicesRequest { serviceCodeList :: NullOrUndefined (ServiceCodeList), language :: NullOrUndefined (Language) }
+  = DescribeServicesRequest { serviceCodeList :: Maybe (ServiceCodeList), language :: Maybe (Language) }
 ```
 
 <p/>
@@ -1171,7 +1171,7 @@ Constructs DescribeServicesRequest from required parameters
 #### `newDescribeServicesRequest'`
 
 ``` purescript
-newDescribeServicesRequest' :: ({ serviceCodeList :: NullOrUndefined (ServiceCodeList), language :: NullOrUndefined (Language) } -> { serviceCodeList :: NullOrUndefined (ServiceCodeList), language :: NullOrUndefined (Language) }) -> DescribeServicesRequest
+newDescribeServicesRequest' :: ({ serviceCodeList :: Maybe (ServiceCodeList), language :: Maybe (Language) } -> { serviceCodeList :: Maybe (ServiceCodeList), language :: Maybe (Language) }) -> DescribeServicesRequest
 ```
 
 Constructs DescribeServicesRequest's fields from required parameters
@@ -1180,7 +1180,7 @@ Constructs DescribeServicesRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeServicesResponse
-  = DescribeServicesResponse { services :: NullOrUndefined (ServiceList) }
+  = DescribeServicesResponse { services :: Maybe (ServiceList) }
 ```
 
 <p>The list of AWS services returned by the <a>DescribeServices</a> operation.</p>
@@ -1205,7 +1205,7 @@ Constructs DescribeServicesResponse from required parameters
 #### `newDescribeServicesResponse'`
 
 ``` purescript
-newDescribeServicesResponse' :: ({ services :: NullOrUndefined (ServiceList) } -> { services :: NullOrUndefined (ServiceList) }) -> DescribeServicesResponse
+newDescribeServicesResponse' :: ({ services :: Maybe (ServiceList) } -> { services :: Maybe (ServiceList) }) -> DescribeServicesResponse
 ```
 
 Constructs DescribeServicesResponse's fields from required parameters
@@ -1214,7 +1214,7 @@ Constructs DescribeServicesResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeSeverityLevelsRequest
-  = DescribeSeverityLevelsRequest { language :: NullOrUndefined (Language) }
+  = DescribeSeverityLevelsRequest { language :: Maybe (Language) }
 ```
 
 <p/>
@@ -1239,7 +1239,7 @@ Constructs DescribeSeverityLevelsRequest from required parameters
 #### `newDescribeSeverityLevelsRequest'`
 
 ``` purescript
-newDescribeSeverityLevelsRequest' :: ({ language :: NullOrUndefined (Language) } -> { language :: NullOrUndefined (Language) }) -> DescribeSeverityLevelsRequest
+newDescribeSeverityLevelsRequest' :: ({ language :: Maybe (Language) } -> { language :: Maybe (Language) }) -> DescribeSeverityLevelsRequest
 ```
 
 Constructs DescribeSeverityLevelsRequest's fields from required parameters
@@ -1248,7 +1248,7 @@ Constructs DescribeSeverityLevelsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeSeverityLevelsResponse
-  = DescribeSeverityLevelsResponse { severityLevels :: NullOrUndefined (SeverityLevelsList) }
+  = DescribeSeverityLevelsResponse { severityLevels :: Maybe (SeverityLevelsList) }
 ```
 
 <p>The list of severity levels returned by the <a>DescribeSeverityLevels</a> operation.</p>
@@ -1273,7 +1273,7 @@ Constructs DescribeSeverityLevelsResponse from required parameters
 #### `newDescribeSeverityLevelsResponse'`
 
 ``` purescript
-newDescribeSeverityLevelsResponse' :: ({ severityLevels :: NullOrUndefined (SeverityLevelsList) } -> { severityLevels :: NullOrUndefined (SeverityLevelsList) }) -> DescribeSeverityLevelsResponse
+newDescribeSeverityLevelsResponse' :: ({ severityLevels :: Maybe (SeverityLevelsList) } -> { severityLevels :: Maybe (SeverityLevelsList) }) -> DescribeSeverityLevelsResponse
 ```
 
 Constructs DescribeSeverityLevelsResponse's fields from required parameters
@@ -1350,7 +1350,7 @@ Constructs DescribeTrustedAdvisorCheckRefreshStatusesResponse's fields from requ
 
 ``` purescript
 newtype DescribeTrustedAdvisorCheckResultRequest
-  = DescribeTrustedAdvisorCheckResultRequest { checkId :: String, language :: NullOrUndefined (String) }
+  = DescribeTrustedAdvisorCheckResultRequest { checkId :: String, language :: Maybe (String) }
 ```
 
 <p/>
@@ -1375,7 +1375,7 @@ Constructs DescribeTrustedAdvisorCheckResultRequest from required parameters
 #### `newDescribeTrustedAdvisorCheckResultRequest'`
 
 ``` purescript
-newDescribeTrustedAdvisorCheckResultRequest' :: String -> ({ checkId :: String, language :: NullOrUndefined (String) } -> { checkId :: String, language :: NullOrUndefined (String) }) -> DescribeTrustedAdvisorCheckResultRequest
+newDescribeTrustedAdvisorCheckResultRequest' :: String -> ({ checkId :: String, language :: Maybe (String) } -> { checkId :: String, language :: Maybe (String) }) -> DescribeTrustedAdvisorCheckResultRequest
 ```
 
 Constructs DescribeTrustedAdvisorCheckResultRequest's fields from required parameters
@@ -1384,7 +1384,7 @@ Constructs DescribeTrustedAdvisorCheckResultRequest's fields from required param
 
 ``` purescript
 newtype DescribeTrustedAdvisorCheckResultResponse
-  = DescribeTrustedAdvisorCheckResultResponse { result :: NullOrUndefined (TrustedAdvisorCheckResult) }
+  = DescribeTrustedAdvisorCheckResultResponse { result :: Maybe (TrustedAdvisorCheckResult) }
 ```
 
 <p>The result of the Trusted Advisor check returned by the <a>DescribeTrustedAdvisorCheckResult</a> operation.</p>
@@ -1409,7 +1409,7 @@ Constructs DescribeTrustedAdvisorCheckResultResponse from required parameters
 #### `newDescribeTrustedAdvisorCheckResultResponse'`
 
 ``` purescript
-newDescribeTrustedAdvisorCheckResultResponse' :: ({ result :: NullOrUndefined (TrustedAdvisorCheckResult) } -> { result :: NullOrUndefined (TrustedAdvisorCheckResult) }) -> DescribeTrustedAdvisorCheckResultResponse
+newDescribeTrustedAdvisorCheckResultResponse' :: ({ result :: Maybe (TrustedAdvisorCheckResult) } -> { result :: Maybe (TrustedAdvisorCheckResult) }) -> DescribeTrustedAdvisorCheckResultResponse
 ```
 
 Constructs DescribeTrustedAdvisorCheckResultResponse's fields from required parameters
@@ -1650,7 +1650,7 @@ Encode IncludeResolvedCases
 
 ``` purescript
 newtype InternalServerError
-  = InternalServerError { message :: NullOrUndefined (ErrorMessage) }
+  = InternalServerError { message :: Maybe (ErrorMessage) }
 ```
 
 <p>An internal server error occurred.</p>
@@ -1675,7 +1675,7 @@ Constructs InternalServerError from required parameters
 #### `newInternalServerError'`
 
 ``` purescript
-newInternalServerError' :: ({ message :: NullOrUndefined (ErrorMessage) } -> { message :: NullOrUndefined (ErrorMessage) }) -> InternalServerError
+newInternalServerError' :: ({ message :: Maybe (ErrorMessage) } -> { message :: Maybe (ErrorMessage) }) -> InternalServerError
 ```
 
 Constructs InternalServerError's fields from required parameters
@@ -1748,7 +1748,7 @@ Encode NextToken
 
 ``` purescript
 newtype RecentCaseCommunications
-  = RecentCaseCommunications { communications :: NullOrUndefined (CommunicationList), nextToken :: NullOrUndefined (NextToken) }
+  = RecentCaseCommunications { communications :: Maybe (CommunicationList), nextToken :: Maybe (NextToken) }
 ```
 
 <p>The five most recent communications associated with the case.</p>
@@ -1773,7 +1773,7 @@ Constructs RecentCaseCommunications from required parameters
 #### `newRecentCaseCommunications'`
 
 ``` purescript
-newRecentCaseCommunications' :: ({ communications :: NullOrUndefined (CommunicationList), nextToken :: NullOrUndefined (NextToken) } -> { communications :: NullOrUndefined (CommunicationList), nextToken :: NullOrUndefined (NextToken) }) -> RecentCaseCommunications
+newRecentCaseCommunications' :: ({ communications :: Maybe (CommunicationList), nextToken :: Maybe (NextToken) } -> { communications :: Maybe (CommunicationList), nextToken :: Maybe (NextToken) }) -> RecentCaseCommunications
 ```
 
 Constructs RecentCaseCommunications's fields from required parameters
@@ -1850,7 +1850,7 @@ Constructs RefreshTrustedAdvisorCheckResponse's fields from required parameters
 
 ``` purescript
 newtype ResolveCaseRequest
-  = ResolveCaseRequest { caseId :: NullOrUndefined (CaseId) }
+  = ResolveCaseRequest { caseId :: Maybe (CaseId) }
 ```
 
 <p/>
@@ -1875,7 +1875,7 @@ Constructs ResolveCaseRequest from required parameters
 #### `newResolveCaseRequest'`
 
 ``` purescript
-newResolveCaseRequest' :: ({ caseId :: NullOrUndefined (CaseId) } -> { caseId :: NullOrUndefined (CaseId) }) -> ResolveCaseRequest
+newResolveCaseRequest' :: ({ caseId :: Maybe (CaseId) } -> { caseId :: Maybe (CaseId) }) -> ResolveCaseRequest
 ```
 
 Constructs ResolveCaseRequest's fields from required parameters
@@ -1884,7 +1884,7 @@ Constructs ResolveCaseRequest's fields from required parameters
 
 ``` purescript
 newtype ResolveCaseResponse
-  = ResolveCaseResponse { initialCaseStatus :: NullOrUndefined (CaseStatus), finalCaseStatus :: NullOrUndefined (CaseStatus) }
+  = ResolveCaseResponse { initialCaseStatus :: Maybe (CaseStatus), finalCaseStatus :: Maybe (CaseStatus) }
 ```
 
 <p>The status of the case returned by the <a>ResolveCase</a> operation.</p>
@@ -1909,7 +1909,7 @@ Constructs ResolveCaseResponse from required parameters
 #### `newResolveCaseResponse'`
 
 ``` purescript
-newResolveCaseResponse' :: ({ initialCaseStatus :: NullOrUndefined (CaseStatus), finalCaseStatus :: NullOrUndefined (CaseStatus) } -> { initialCaseStatus :: NullOrUndefined (CaseStatus), finalCaseStatus :: NullOrUndefined (CaseStatus) }) -> ResolveCaseResponse
+newResolveCaseResponse' :: ({ initialCaseStatus :: Maybe (CaseStatus), finalCaseStatus :: Maybe (CaseStatus) } -> { initialCaseStatus :: Maybe (CaseStatus), finalCaseStatus :: Maybe (CaseStatus) }) -> ResolveCaseResponse
 ```
 
 Constructs ResolveCaseResponse's fields from required parameters
@@ -1934,7 +1934,7 @@ Encode Result
 
 ``` purescript
 newtype Service
-  = Service { code :: NullOrUndefined (ServiceCode), name :: NullOrUndefined (ServiceName), categories :: NullOrUndefined (CategoryList) }
+  = Service { code :: Maybe (ServiceCode), name :: Maybe (ServiceName), categories :: Maybe (CategoryList) }
 ```
 
 <p>Information about an AWS service returned by the <a>DescribeServices</a> operation. </p>
@@ -1959,7 +1959,7 @@ Constructs Service from required parameters
 #### `newService'`
 
 ``` purescript
-newService' :: ({ code :: NullOrUndefined (ServiceCode), name :: NullOrUndefined (ServiceName), categories :: NullOrUndefined (CategoryList) } -> { code :: NullOrUndefined (ServiceCode), name :: NullOrUndefined (ServiceName), categories :: NullOrUndefined (CategoryList) }) -> Service
+newService' :: ({ code :: Maybe (ServiceCode), name :: Maybe (ServiceName), categories :: Maybe (CategoryList) } -> { code :: Maybe (ServiceCode), name :: Maybe (ServiceName), categories :: Maybe (CategoryList) }) -> Service
 ```
 
 Constructs Service's fields from required parameters
@@ -2048,7 +2048,7 @@ Encode SeverityCode
 
 ``` purescript
 newtype SeverityLevel
-  = SeverityLevel { code :: NullOrUndefined (SeverityLevelCode), name :: NullOrUndefined (SeverityLevelName) }
+  = SeverityLevel { code :: Maybe (SeverityLevelCode), name :: Maybe (SeverityLevelName) }
 ```
 
 <p>A code and name pair that represent a severity level that can be applied to a support case.</p>
@@ -2073,7 +2073,7 @@ Constructs SeverityLevel from required parameters
 #### `newSeverityLevel'`
 
 ``` purescript
-newSeverityLevel' :: ({ code :: NullOrUndefined (SeverityLevelCode), name :: NullOrUndefined (SeverityLevelName) } -> { code :: NullOrUndefined (SeverityLevelCode), name :: NullOrUndefined (SeverityLevelName) }) -> SeverityLevel
+newSeverityLevel' :: ({ code :: Maybe (SeverityLevelCode), name :: Maybe (SeverityLevelName) } -> { code :: Maybe (SeverityLevelCode), name :: Maybe (SeverityLevelName) }) -> SeverityLevel
 ```
 
 Constructs SeverityLevel's fields from required parameters
@@ -2210,7 +2210,7 @@ Encode TimeCreated
 
 ``` purescript
 newtype TrustedAdvisorCategorySpecificSummary
-  = TrustedAdvisorCategorySpecificSummary { costOptimizing :: NullOrUndefined (TrustedAdvisorCostOptimizingSummary) }
+  = TrustedAdvisorCategorySpecificSummary { costOptimizing :: Maybe (TrustedAdvisorCostOptimizingSummary) }
 ```
 
 <p>The container for summary information that relates to the category of the Trusted Advisor check.</p>
@@ -2235,7 +2235,7 @@ Constructs TrustedAdvisorCategorySpecificSummary from required parameters
 #### `newTrustedAdvisorCategorySpecificSummary'`
 
 ``` purescript
-newTrustedAdvisorCategorySpecificSummary' :: ({ costOptimizing :: NullOrUndefined (TrustedAdvisorCostOptimizingSummary) } -> { costOptimizing :: NullOrUndefined (TrustedAdvisorCostOptimizingSummary) }) -> TrustedAdvisorCategorySpecificSummary
+newTrustedAdvisorCategorySpecificSummary' :: ({ costOptimizing :: Maybe (TrustedAdvisorCostOptimizingSummary) } -> { costOptimizing :: Maybe (TrustedAdvisorCostOptimizingSummary) }) -> TrustedAdvisorCategorySpecificSummary
 ```
 
 Constructs TrustedAdvisorCategorySpecificSummary's fields from required parameters
@@ -2378,7 +2378,7 @@ Constructs TrustedAdvisorCheckResult's fields from required parameters
 
 ``` purescript
 newtype TrustedAdvisorCheckSummary
-  = TrustedAdvisorCheckSummary { checkId :: String, timestamp :: String, status :: String, hasFlaggedResources :: NullOrUndefined (Boolean), resourcesSummary :: TrustedAdvisorResourcesSummary, categorySpecificSummary :: TrustedAdvisorCategorySpecificSummary }
+  = TrustedAdvisorCheckSummary { checkId :: String, timestamp :: String, status :: String, hasFlaggedResources :: Maybe (Boolean), resourcesSummary :: TrustedAdvisorResourcesSummary, categorySpecificSummary :: TrustedAdvisorCategorySpecificSummary }
 ```
 
 <p>A summary of a Trusted Advisor check result, including the alert status, last refresh, and number of resources examined.</p>
@@ -2403,7 +2403,7 @@ Constructs TrustedAdvisorCheckSummary from required parameters
 #### `newTrustedAdvisorCheckSummary'`
 
 ``` purescript
-newTrustedAdvisorCheckSummary' :: TrustedAdvisorCategorySpecificSummary -> String -> TrustedAdvisorResourcesSummary -> String -> String -> ({ checkId :: String, timestamp :: String, status :: String, hasFlaggedResources :: NullOrUndefined (Boolean), resourcesSummary :: TrustedAdvisorResourcesSummary, categorySpecificSummary :: TrustedAdvisorCategorySpecificSummary } -> { checkId :: String, timestamp :: String, status :: String, hasFlaggedResources :: NullOrUndefined (Boolean), resourcesSummary :: TrustedAdvisorResourcesSummary, categorySpecificSummary :: TrustedAdvisorCategorySpecificSummary }) -> TrustedAdvisorCheckSummary
+newTrustedAdvisorCheckSummary' :: TrustedAdvisorCategorySpecificSummary -> String -> TrustedAdvisorResourcesSummary -> String -> String -> ({ checkId :: String, timestamp :: String, status :: String, hasFlaggedResources :: Maybe (Boolean), resourcesSummary :: TrustedAdvisorResourcesSummary, categorySpecificSummary :: TrustedAdvisorCategorySpecificSummary } -> { checkId :: String, timestamp :: String, status :: String, hasFlaggedResources :: Maybe (Boolean), resourcesSummary :: TrustedAdvisorResourcesSummary, categorySpecificSummary :: TrustedAdvisorCategorySpecificSummary }) -> TrustedAdvisorCheckSummary
 ```
 
 Constructs TrustedAdvisorCheckSummary's fields from required parameters
@@ -2462,7 +2462,7 @@ Constructs TrustedAdvisorCostOptimizingSummary's fields from required parameters
 
 ``` purescript
 newtype TrustedAdvisorResourceDetail
-  = TrustedAdvisorResourceDetail { status :: String, region :: NullOrUndefined (String), resourceId :: String, isSuppressed :: NullOrUndefined (Boolean), metadata :: StringList }
+  = TrustedAdvisorResourceDetail { status :: String, region :: Maybe (String), resourceId :: String, isSuppressed :: Maybe (Boolean), metadata :: StringList }
 ```
 
 <p>Contains information about a resource identified by a Trusted Advisor check.</p>
@@ -2487,7 +2487,7 @@ Constructs TrustedAdvisorResourceDetail from required parameters
 #### `newTrustedAdvisorResourceDetail'`
 
 ``` purescript
-newTrustedAdvisorResourceDetail' :: StringList -> String -> String -> ({ status :: String, region :: NullOrUndefined (String), resourceId :: String, isSuppressed :: NullOrUndefined (Boolean), metadata :: StringList } -> { status :: String, region :: NullOrUndefined (String), resourceId :: String, isSuppressed :: NullOrUndefined (Boolean), metadata :: StringList }) -> TrustedAdvisorResourceDetail
+newTrustedAdvisorResourceDetail' :: StringList -> String -> String -> ({ status :: String, region :: Maybe (String), resourceId :: String, isSuppressed :: Maybe (Boolean), metadata :: StringList } -> { status :: String, region :: Maybe (String), resourceId :: String, isSuppressed :: Maybe (Boolean), metadata :: StringList }) -> TrustedAdvisorResourceDetail
 ```
 
 Constructs TrustedAdvisorResourceDetail's fields from required parameters
